@@ -6,5 +6,16 @@ body {
 .sidenav li a {
     color: #fff;
 }
-/*-------Footer-----------------*/
 
+.nav-wrapper a em {
+    color: #e65100;
+}
+
+.signup-message {
+    line-height: 5;
+}
+
+.card-panel {
+    box-shadow: 0 0 20px 7px rgba(0,0,0,0.5);
+    opacity: 90%;
+}
