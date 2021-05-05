@@ -63,19 +63,18 @@ def signin():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
+                        flash("Welcome back, {}!".format(
                             request.form.get("username")))
-                        return redirect(url_for(
-                            "profile", username=session["user"]))
             else:
                 # invalid password match
-                flash("Incorrect Username and/or Password")
+                flash("Sorry, check your Username and/or Password!")
                 return redirect(url_for("signin"))
 
         else:
             # username doesn't exist
-            flash("Incorrect Username and/or Password")
+            flash("Sorry, the Username and/or Password are incorrect!")
             return redirect(url_for("signin"))
+   
     return render_template("signin.html")
 
 
