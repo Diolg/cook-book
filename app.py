@@ -48,6 +48,8 @@ def signup():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Welcome! You can start using this app!")
+        return redirect(url_for("mypage", username=session["user"]))
+        
     return render_template("signup.html")
 
 
@@ -65,6 +67,8 @@ def signin():
                         session["user"] = request.form.get("username").lower()
                         flash("Welcome back, {}!".format(
                             request.form.get("username")))
+                        return redirect(url_for(
+                            "mypage", username=session["user"]))
             else:
                 # invalid password match
                 flash("Sorry, check your Username and/or Password!")
@@ -76,6 +80,18 @@ def signin():
             return redirect(url_for("signin"))
    
     return render_template("signin.html")
+
+
+@app.route("/mypage/<username>", methods=["GET", "POST"])
+def mypage(username):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:
+        return render_template("mypage.html", username=username)
+
+    return redirect(url_for("signin"))
 
 
 
