@@ -1,15 +1,31 @@
 body {
     background-image: url(../images/platter.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
     color: white;
+    display: flex;
+    flex-direction: column;  
+    min-height: 100vh;
+    
 }
+
+main {
+    flex: 1 0 auto;
+  }
 
 .sidenav li a {
     color: #fff;
 }
 
-.nav-wrapper a em {
-    color: #e65100;
+.sidenav {
+ opacity: 90%;
 }
+
+.nav-wrapper a em {
+   color: #e65100;
+}
+
 
 .signup-message {
     line-height: 5;
@@ -18,4 +34,15 @@ body {
 .card-panel {
     box-shadow: 0 0 20px 7px rgba(0,0,0,0.5);
     opacity: 90%;
+}
+
+.center-align a {
+    color: #e65100;
+}
+
+.page-footer {
+    padding: 5px;
+    flex-grow: 0;
+    background-color: #3e2723 ;
+   
 }
