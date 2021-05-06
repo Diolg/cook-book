@@ -21,12 +21,17 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+                    {% if session.user %}
                     <li><a href="{{ url_for('mypage', username=session['user']) }}">My Page</a></li>
-                    <li><a href="">New recipe</a></li>
+                    <li><a href="{{ url_for('add_recipe') }}">New recipe</a></li>
                     <li><a href="">Manage categories</a></li>
+                    {% else %}
                     <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
                     <li><a href="{{ url_for('signin') }}">Sign In</a></li>
-                    <li><a href="">Sign Out</a></li>
+                    {% endif %}
+                    {% if session.user %}
+                    <li><a href="{{ url_for('signout') }}">Sign Out</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -34,12 +39,17 @@
         <!--mobile side navbar-->
         <ul class="sidenav brown darken-4" id="mobile-demo">
             <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+            {% if session.user %}
             <li><a href="{{ url_for('mypage', username=session['user']) }}">My Page</a></li>
-            <li><a href="">New recipe</a></li>
+            <li><a href="{{ url_for('add_recipe') }}">New recipe</a></li>
             <li><a href="">Manage categories</a></li>
+             {% else %}
             <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
             <li><a href="{{ url_for('signin') }}">Sign In</a></li>
-            <li><a href="">Sign Out</a></li>
+            {% endif %}
+            {% if session.user %}
+            <li><a href="{{ url_for('signout') }}">Sign Out</a></li>
+            {% endif %}
         </ul>
     </header>
 

@@ -49,7 +49,7 @@ def signup():
         session["user"] = request.form.get("username").lower()
         flash("Welcome! You can start using this app!")
         return redirect(url_for("mypage", username=session["user"]))
-        
+
     return render_template("signup.html")
 
 
@@ -94,7 +94,17 @@ def mypage(username):
     return redirect(url_for("signin"))
 
 
+@app.route("/signout")
+def signout():
+    # remove user from session cookie
+    flash("See you soon!")
+    session.pop("user")
+    return redirect(url_for("signin"))
 
+
+@app.route("/add_recipe")
+def add_recipe():
+    return render_template("add_recipe.html")
 
 
 if __name__ == "__main__":
