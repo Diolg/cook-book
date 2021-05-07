@@ -182,6 +182,15 @@ def edit_category(recipes_category_id):
     recipes_category = mongo.db.recipes_categories.find_one({"_id": ObjectId(recipes_category_id)})
     return render_template("edit_category.html", recipes_category=recipes_category)
 
+
+@app.route("/delete_category, <recipes_category_id>")
+def delete_category(recipes_category_id):
+    mongo.db.recipes_categories.remove({"_id":ObjectId(recipes_category_id)})
+    flash("You removed the Category Successfully!")
+    return redirect(url_for("get_categories"))
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
