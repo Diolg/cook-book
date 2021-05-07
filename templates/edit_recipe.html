@@ -14,11 +14,15 @@
            <div class="row">
 				<div class="input-field col s12">
 					<select id="category_name" name="category_name" class="validate" required>
-                        <option value="" disabled selected>Select Recipe Category</option>
-                        {% for recipes_category in recipes_categories %}
-                            <option value="{{ recipes_category.category_name }}">{{ recipes_category.category_name }}</option>
-                        {% endfor %}
-                    </select>
+					    <option value="" disabled>Select Recipe Category</option>
+					    {% for recipes_category in recipes_categories %}
+					        {% if recipes_category.category_name == recipe.category_name %}
+					            <option value="{{ recipes_category.category_name }}" selected>{{ recipes_category.category_name }}</option>
+					        {% else %}
+					            <option value="{{ recipes_category.category_name }}">{{ recipes_category.category_name }}</option>
+					        {% endif %}
+					    {% endfor %}
+					</select>
 					<label for="category_name">Recipe Category</label>
 				</div>
 			</div>
@@ -29,7 +33,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <input id="task_name" name="task_name" minlength="5" maxlength="50"
-                        type="text" class="validate" required>
+                        value ="{{ recipe.recipe_name }}" type="text" class="validate" required>
                     <label for="task_name">Recipe Name</label>
                 </div>
             </div>
@@ -38,7 +42,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="recipe_description" name="recipe_description" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
+                        maxlength="200" class="materialize-textarea validate" required>{{recipe.recipe_description}}</textarea>
                     <label for="recipe_description">Recipe Description</label>
                 </div>
             </div>
@@ -47,9 +51,9 @@
 
              <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="recipe_description" name="recipe_description" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="recipe_description">Cooking Time</label>
+                    <textarea id="cooking_time" name="cooking_time" minlength="5"
+                        maxlength="200" class="materialize-textarea validate" required>{{recipe.cooking_time}}</textarea>
+                    <label for="cooking_time">Cooking Time</label>
                 </div>
             </div>
 
@@ -58,9 +62,9 @@
 
              <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="recipe_description" name="recipe_description" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="recipe_description">Ingredients</label>
+                    <textarea id="ingredients" name="ingredients" minlength="5"
+                        maxlength="200" class="materialize-textarea validate" required>{{ingredients}}</textarea>
+                    <label for="ingredients">Ingredients</label>
                 </div>
             </div>
 
@@ -68,18 +72,22 @@
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="link_website" name="link_website" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
+                        maxlength="200" class="materialize-textarea validate" required>{{link_website}}</textarea>
                     <label for="link_website">Link</label>
                 </div>
             </div>
             
            
              <!-- Button for adding recipe -->
-            <div class="row">
+            <div class="row add_recipe">
                 <div class="col s12 center-align">
                     <button type="submit" class="btn waves-effect waves-light orange darken-4">
                         Edit Recipe!
                     </button>
+                    <a href="{{ url_for('get_recipes') }}" class="btn waves-light orange darken-4">
+                        Cancel
+                     <i class="fas fa-times-circle right"></i>
+                    </a>
                 </div>
             </div>
 

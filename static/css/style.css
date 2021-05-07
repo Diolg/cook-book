@@ -54,3 +54,9 @@ main {
 .mypage h4 {
     color:#e65100 ;
 }
+
+/*----Edit Recipe------*/
+
+.add_recipe a {
+    color: #fff;
+}
