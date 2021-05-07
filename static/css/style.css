@@ -64,3 +64,12 @@ main {
 .recipe-inputs span {
     color:#e65100;
 }
+
+/*------Categories---------*/
+.view-categories {
+    color: #e65100;
+}
+
+.category-button a {
+    color: #fff;
+}

@@ -6,19 +6,25 @@
     <h2 class="center-align">Modify Categories</h2>
 </div>
 
-<!--Recipe Description-->
+<div class="row">
+    <div class="col s12 center-align category-button">
+         <a href="{{ url_for('add_category') }}" class="btn-large orange darken-4">
+             Create New Category
+         </a>
+    </div>
+</div>
 
+<!--Recipe Description-->
     {% for recipe_category in recipes_categories %}
     <div class="container">
-
         <div class="row">
             <div class="col s12 m12">
-                <div class="card-panel brown darken-4">
-                    <h6><span>Category: {{ recipe_category.category_name }}</span> </h6>
+                <div class="card-panel brown darken-4 ">
+                    <h6><span class="view-categories">Category:</span> {{ recipe_category.category_name }} </h6>
                 </div>
-                <a href="" class="btn-small  waves-light orange darken-4">
+                <a href=" " class="btn-small  waves-light orange darken-4">
                     Delete</a>
-                <a href=" " class="btn-small  waves-light orange darke n-4">
+                <a href="" class="btn-small  waves-light orange darke n-4">
                     Edit</a>
             </div>
         </div>
