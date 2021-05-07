@@ -15,16 +15,16 @@
 </div>
 
 <!--Recipe Description-->
-    {% for recipe_category in recipes_categories %}
+    {% for recipes_category in recipes_categories %}
     <div class="container">
         <div class="row">
             <div class="col s12 m12">
                 <div class="card-panel brown darken-4 ">
-                    <h6><span class="view-categories">Category:</span> {{ recipe_category.category_name }} </h6>
+                    <h6><span class="view-categories">Category:</span> {{ recipes_category.category_name }} </h6>
                 </div>
                 <a href=" " class="btn-small  waves-light orange darken-4">
                     Delete</a>
-                <a href="" class="btn-small  waves-light orange darke n-4">
+                <a href="{{ url_for('edit_category', recipes_category_id=recipes_category._id) }}" class="btn-small  waves-light orange darke n-4">
                     Edit</a>
             </div>
         </div>
