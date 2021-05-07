@@ -122,6 +122,15 @@ def add_recipe():
     recipes_categories = mongo.db.recipes_categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", recipes_categories = recipes_categories)
 
+@app.route("/edit_recipe/<recipe_id>", methods=["GET","POST"])
+def edit_recipe(recipe_id):
+    recipe = mongo.db.tasks.find_one({"id_": ObjectId(recipe_id)})
+
+    recipes_categories = mongo.db.recipes_categories.find().sort("category_name", 1)
+    return render_template("edit_recipe.html", recipe=recipe, recipes_categories = recipes_categories)
+
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
