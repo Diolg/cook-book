@@ -60,3 +60,7 @@ main {
 .add_recipe a {
     color: #fff;
 }
+
+.recipe-inputs span {
+    color:#e65100;
+}
