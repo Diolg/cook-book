@@ -26,6 +26,13 @@ def get_recipes():
     recipes = mongo.db.recipes.find()
     return render_template("recipes.html", recipes=recipes)
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("recipes.html", recipes=recipes)
+        
+
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
@@ -92,7 +99,8 @@ def mypage(username):
         return render_template("mypage.html", username=username)
 
     return redirect(url_for("signin"))
-        
+
+
 
 
 @app.route("/signout")
