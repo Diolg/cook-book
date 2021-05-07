@@ -92,6 +92,7 @@ def mypage(username):
         return render_template("mypage.html", username=username)
 
     return redirect(url_for("signin"))
+        
 
 
 @app.route("/signout")
@@ -102,9 +103,24 @@ def signout():
     return redirect(url_for("signin"))
 
 
-@app.route("/add_recipe")
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    return render_template("add_recipe.html")
+    if request.method == "POST":
+        recipe = {
+            "category_name": request.form.get("category_name"),
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_description": request.form.get("recipe_description"),
+            "cooking_time": request.form.get("cooking_time"),
+            "ingredients": request.form.get("ingredients"),
+            "link_website": request.form.get("link_website"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Your recipe is added to the CookBook!")
+        return redirect(url_for("get_recipes"))
+
+    recipes_categories = mongo.db.recipes_categories.find().sort("category_name", 1)
+    return render_template("add_recipe.html", recipes_categories = recipes_categories)
 
 
 if __name__ == "__main__":
