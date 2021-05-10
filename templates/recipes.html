@@ -3,11 +3,11 @@
 
 
 <div class="recipe-text">
-    <h2 class="center-align">Your Recipes</h2>
+    <h2 class="center-align">Welcome to the CookNoteBook</h2>
 </div>
 
 <div class="recipe-text">
-    <h3 class="center-align">Here you can see and manage your recipes</h3>
+    <h3 class="center-align">A Place to store and manage your recipes</h3>
 </div>
  
 <!--Recipe Description-->
@@ -16,7 +16,7 @@
             {% for recipe in recipes%}
             <div class="col s12 m4 14">
                 
-                <div class="card-panel brown darken-4 recipe-inputs">
+                <div class="card-panel recipes-description brown darken-4 recipe-inputs">
                     <h6><span>Category:</span> {{ recipe.category_name }}</h6>
                     <h6><span>Name:</span> {{ recipe.recipe_name }}</h6>
                     <h6><span>Recipe description:</span> {{ recipe.recipe_description }}</h6>
@@ -30,20 +30,20 @@
                         </ul>   
 
                     <h6><span>Cooking time:</span> {{ recipe.cooking_time }}</h6>
-                    <h6><span>Link:</span> {{ link_website }}</h6>
+                    <h6><span>Link:</span> {{ recipe.link_website }}</h6>
                     <h6><span>Created by:</span> {{ recipe.created_by }}</h6>
                 </div>
+                    
                     <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small  waves-light orange darken-4">
                         Delete</a>
                     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small  waves-light orange darke n-4">
                         Edit</a>
+                    <a href=" " class="btn-small  waves-light orange darke n-4">
+                        View Recipe</a>
+                
             </div>
             {% endfor %}
         </div>
         
     
-
-    
-
-
 {% endblock %}

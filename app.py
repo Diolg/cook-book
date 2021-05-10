@@ -21,10 +21,15 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+def home():
+    return render_template("index.html")
+
+
 @app.route("/get_recipes")
 def get_recipes():
     recipes = mongo.db.recipes.find()
     return render_template("recipes.html", recipes=recipes)
+
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -100,8 +105,6 @@ def mypage(username):
     return redirect(url_for("signin"))
 
 
-
-
 @app.route("/signout")
 def signout():
     # remove user from session cookie
@@ -120,8 +123,7 @@ def add_recipe():
             "cooking_time": request.form.get("cooking_time"),
             "ingredients": request.form.get("ingredients"),
             "link_website": request.form.get("link_website"),
-            "created_by": session["user"]
-            
+            "created_by": session["user"]           
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Your recipe is added to the CookBook!")
@@ -172,7 +174,7 @@ def delete_recipe(recipe_id):
 def get_categories():
     if not session.get("user") =="admin":
         flash("Sorry, you don't have access to this page")
-        return render_template("recipes.html")
+        return render_template("mypage.html")
 
     recipes_categories = list(mongo.db.recipes_categories.find().sort("category_name", 1))
     return render_template("categories.html", recipes_categories=recipes_categories)
