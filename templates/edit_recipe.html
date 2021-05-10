@@ -14,9 +14,13 @@
            <div class="row">
 				<div class="input-field col s8">
 					<select id="category_name" name="category_name" class="validate" required>
-					    <option value="" disabled selected>Select Recipe Category</option>
+					    <option value="" disabled>Select Recipe Category</option>
                         {% for recipes_category in recipes_categories %}
-					            <option value="{{ recipes_category.category_name }}" selected>{{ recipes_category.category_name }}</option>
+                            {% if recipes_category.category_name == recipe.category_name %}
+                                <option value="{{ recipes_category.category_name }}" selected>{{ recipes_category.category_name }}</option>
+                            {% else %}
+                                <option value="{{ recipes_category.category_name }}">{{ recipes_category.category_name }}</option>
+                            {% endif %}
 					    {% endfor %}
 					</select>
 					<label for="category_name">Recipe Category</label>
@@ -28,9 +32,9 @@
             <!-- Recipe name -->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="task_name" name="task_name" minlength="5" maxlength="50"
+                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
                         value ="{{ recipe.recipe_name }}" type="text" class="validate" required>
-                    <label for="task_name">Recipe Name</label>
+                    <label for="recipe_name">Recipe Name</label>
                 </div>
             </div>
 
@@ -59,7 +63,7 @@
              <div class="row">
                 <div class="input-field col s12">
                     <textarea id="ingredients" name="ingredients" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required>{{ingredients}}</textarea>
+                        maxlength="200" class="materialize-textarea validate" required>{{recipe.ingredients}}</textarea>
                     <label for="ingredients">Ingredients</label>
                 </div>
             </div>
@@ -68,7 +72,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="link_website" name="link_website" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required>{{link_website}}</textarea>
+                        maxlength="200" class="materialize-textarea validate" required>{{recipe.link_website}}</textarea>
                     <label for="link_website">Link</label>
                 </div>
             </div>

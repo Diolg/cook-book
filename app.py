@@ -146,7 +146,7 @@ def edit_recipe(recipe_id):
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Your recipe now is updated!")
 
-    recipe = mongo.db.tasks.find_one({"_id": ObjectId(recipe_id)})
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     recipes_categories = mongo.db.recipes_categories.find().sort("category_name", 1)
     return render_template(
         "edit_recipe.html", recipe=recipe, recipes_categories=recipes_categories)
@@ -161,6 +161,8 @@ def delete_recipe(recipe_id):
 
 @app.route("/get_categories")
 def get_categories():
+    
+
     recipes_categories = list(mongo.db.recipes_categories.find().sort("category_name", 1))
     return render_template("categories.html", recipes_categories=recipes_categories)
 
