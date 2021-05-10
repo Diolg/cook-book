@@ -81,3 +81,7 @@ main {
 .reset a {
     color: #fff;
 }
+
+input, textarea {
+    color: #fff;
+}

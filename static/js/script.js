@@ -1,6 +1,6 @@
  $(document).ready(function(){
     $('.sidenav').sidenav();
-    $('.sidenav').sidenav();
+    $(".collapsible").collapsible();
     $('.modal').modal();
     $("select").formSelect();
   }); 

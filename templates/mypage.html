@@ -14,6 +14,17 @@
         </div>
     </div>
 
+    <div class="row add_recipe">
+        <div class="col s12 center-align">
+            <a href="{{ url_for('add_recipe') }}" class="btn waves-light orange darken-4">
+                Start creating your Recipe!
+            </a>
+            <a href="{{ url_for('get_recipes') }}" class="btn waves-light orange darken-4">
+               View all Recipes!
+            </a>
+        </div>
+    </div>
 
+     
 
 {% endblock %}
