@@ -25,9 +25,9 @@
                     <li><a href="{{ url_for('mypage', username=session['user']) }}">My Page</a></li>
                     <li><a href="{{ url_for('add_recipe') }}">New recipe</a></li>
 
-                    {% if session.user|lower == "admin"|lower%}
+                    
                     <li><a href="{{ url_for('get_categories')}}">Manage categories</a></li>
-                    {% endif %}
+                    
 
                     {% else %}
                     <li><a href="{{ url_for('signup') }}">Sign Up</a></li>

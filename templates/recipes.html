@@ -6,35 +6,29 @@
     <h2 class="center-align">Your Recipes</h2>
 </div>
 
-<!--Search option for recipes-->
-
-  <div class="row card-panel brown darken-4">
-        <form action="{{ url_for('search') }}" method="post" class="col s12">
-            <div class="row valign-wrapper center-align">
-                <div class="input-field col s12 m8">
-                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                    <label for="query">Search Recipes</label>
-                </div>
-                <div class="col s12 m4 reset">
-                    <a href="{{ url_for('get_recipes') }}" class="btn orange darken-4 ">Reset</a>
-                    <button type="submit" class=" btn waves-effect waves-light orange">
-                        <i class="fas fa-search left"></i> Search recipes
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-
+<div class="recipe-text">
+    <h3 class="center-align">Here you can see and manage your recipes</h3>
+</div>
+ 
 <!--Recipe Description-->
-{% for recipe in recipes%}
-    <div class="container">
+
         <div class="row">
-            <div class="col s12 m12">
+            {% for recipe in recipes%}
+            <div class="col s12 m4 14">
+                
                 <div class="card-panel brown darken-4 recipe-inputs">
                     <h6><span>Category:</span> {{ recipe.category_name }}</h6>
                     <h6><span>Name:</span> {{ recipe.recipe_name }}</h6>
                     <h6><span>Recipe description:</span> {{ recipe.recipe_description }}</h6>
-                    <h6><span>Ingredients:</span> {{ recipe.ingredients }}</h6>
+                    <h6><span>Ingredients:</span></h6>
+                        <ul>
+                            {% for list in recipe.ingredients.splitlines() %}
+                            <li>
+                                <p>{{list}}</p>
+                            </li>
+                            {% endfor %}
+                        </ul>   
+
                     <h6><span>Cooking time:</span> {{ recipe.cooking_time }}</h6>
                     <h6><span>Link:</span> {{ link_website }}</h6>
                     <h6><span>Created by:</span> {{ recipe.created_by }}</h6>
@@ -44,10 +38,12 @@
                     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small  waves-light orange darke n-4">
                         Edit</a>
             </div>
+            {% endfor %}
         </div>
-    </div>
+        
+    
 
     
-{% endfor %}
+
 
 {% endblock %}

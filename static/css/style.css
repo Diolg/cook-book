@@ -85,3 +85,8 @@ main {
 input, textarea {
     color: #fff;
 }
+
+/*----button cancel adding recipe----*/
+.cancel-add a {
+    color:#fff
+}
