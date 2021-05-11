@@ -1,5 +1,5 @@
 body {
-    background-image: url(../images/platter.jpg);
+    background-image: url(../images/food_wood.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
@@ -7,6 +7,7 @@ body {
     display: flex;
     flex-direction: column;  
     min-height: 100vh;
+    
     
 }
 
@@ -36,8 +37,6 @@ main {
 }
 
 
-
-
 .signup-message {
     line-height: 5;
 }
@@ -45,6 +44,11 @@ main {
 .card-panel {
     box-shadow: 0 0 20px 7px rgba(0,0,0,0.5);
     opacity: 90%;
+}
+
+.card brown, .recipes-description {
+    opacity: 90%;
+
 }
 
 .recipe-image
