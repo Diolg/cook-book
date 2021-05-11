@@ -15,35 +15,41 @@
         <div class="row">
             {% for recipe in recipes%}
             <div class="col s12 m4 14">
-                
+        
                 <div class="card-panel recipes-description brown darken-4 recipe-inputs">
                     <h6><span>Category:</span> {{ recipe.category_name }}</h6>
                     <h6><span>Name:</span> {{ recipe.recipe_name }}</h6>
                     <h6><span>Recipe description:</span> {{ recipe.recipe_description }}</h6>
                     <h6><span>Ingredients:</span></h6>
-                        <ul>
-                            {% for list in recipe.ingredients.splitlines() %}
-                            <li>
-                                <p>{{list}}</p>
-                            </li>
-                            {% endfor %}
-                        </ul>   
-
+                    <ul>
+                        {% for list in recipe.ingredients.splitlines() %}
+                        <li>
+                            <p>{{list}}</p>
+                        </li>
+                        {% endfor %}
+                    </ul>
+        
                     <h6><span>Cooking time:</span> {{ recipe.cooking_time }}</h6>
                     <h6><span>Link:</span> {{ recipe.link_website }}</h6>
                     <h6><span>Created by:</span> {{ recipe.created_by }}</h6>
                 </div>
-                    
-                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small  waves-light orange darken-4">
-                        Delete</a>
-                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small  waves-light orange darke n-4">
-                        Edit</a>
-                    <a href=" " class="btn-small  waves-light orange darke n-4">
-                        View Recipe</a>
-                
+                {% if recipe.created_by == session.user  %}
+                       
+                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small  waves-light orange darken-4">
+                    Delete</a>
+                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small  waves-light orange darke n-4">
+                    Edit</a>
+
+                {% elif session.user == "admin" %}
+                 <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small  waves-light orange darken-4">
+                    Delete</a>
+                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small  waves-light orange darke n-4">
+                    Edit</a>
+
+                {% endif %}
+        
             </div>
             {% endfor %}
         </div>
-        
     
 {% endblock %}

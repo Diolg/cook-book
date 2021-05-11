@@ -1,24 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="row">
+    <div class="col s12"></div>
+    <div class="recipe-text">
+        <h2 class="center-align">Welcome to the CookNoteBook</h2>
+    </div>
 
-<div class="recipe-text">
-    <h2 class="center-align">Welcome to the CookNoteBook</h2>
-</div>
+    <div class="recipe-text">
+        <h3 class="center-align">A Place to store and manage your recipes</h3>
+    </div>
 
-<div class="recipe-text">
-    <h3 class="center-align">A Place to store and manage your recipes</h3>
-</div>
- 
 
-<div class="row ">
-    <div class="col s12 center-align vew-recipes">
-        <a href="{{ url_for('get_recipes') }}" class="btn-large  waves-light orange darken-4">
-            <span>View all recipes</span></a>
+    <div class="row ">
+        <div class="col s12 center-align vew-recipes">
+            <a href="{{ url_for('get_recipes') }}" class="btn-large  waves-light orange darken-4">
+                <span>View all recipes</span></a>
+        </div>
     </div>
 </div>
-    
-
+</div>
     
 
 
