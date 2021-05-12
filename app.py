@@ -19,7 +19,6 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-
 @app.route("/")
 def home():
     return render_template("home.html")
@@ -36,7 +35,7 @@ def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("recipes.html", recipes=recipes)
-        
+
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
@@ -56,7 +55,7 @@ def signup():
         mongo.db.users.insert_one(signup)
         
 
-        # put the new user into 'session' cookie
+        #put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Welcome! You can start using this app!")
         return redirect(url_for("mypage", username=session["user"]))
@@ -163,7 +162,6 @@ def delete_recipe(recipe_id):
     if not session.get("user"):
         flash("Please, sign up or sign in first!")
         return render_template("signup.html")
-
 
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe is Deleted")

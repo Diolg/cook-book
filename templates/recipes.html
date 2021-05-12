@@ -15,13 +15,20 @@
     {% for recipe in recipes%}
 
     <div class="col s12 m4 14">
-            <div class="card brown darken-4 recipes-description recipe-inputs">
-                <div class=card-image>
+        <div class="card brown darken-4 recipes-description recipe-inputs sticky-action">
+            <div class=card-image>
                 <img class="recipe-image" src="{{ recipe.link_website }}" alt="{{recipe.recipe_name}}">
-                </div>
-        
+                <span class="card-title">{{ recipe.recipe_name }}</span>
+                <a class="btn red btn-floating halfway-fab activator">+</a>
+            </div>
 
             <div class="card-content">
+                <h6><span>Category:</span> {{ recipe.category_name }}</h6>
+                <h6><span>Created by:</span> {{ recipe.created_by }}</h6>
+            </div>
+
+            <div class="card-reveal">
+                <span class="card-title"> {{ recipe.recipe_name }}<i class="right">x</i></span>
                 <h6><span>Category:</span> {{ recipe.category_name }}</h6>
                 <h6><span>Name:</span> {{ recipe.recipe_name }}</h6>
                 <h6><span>Recipe description:</span> {{ recipe.recipe_description }}</h6>
@@ -36,27 +43,29 @@
                 <h6><span>Cooking time:</span> {{ recipe.cooking_time }}</h6>
                 <h6><span>Created by:</span> {{ recipe.created_by }}</h6>
             </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
 
-{% if recipe.created_by == session.user  %}
+            <!--Buttons Edit and Delete-->
 
-<a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small  waves-light orange darken-4">
-    Delete</a>
-<a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small  waves-light orange darke n-4">
-    Edit</a>
+            {% if recipe.created_by == session.user  %}
 
-{% elif session.user == "admin" %}
-<a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small  waves-light orange darken-4">
-    Delete</a>
-<a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small  waves-light orange darke n-4">
-    Edit</a>
+            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                class="btn-small  waves-light orange darken-4">
+                Delete</a>
+            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
+                class="btn-small  waves-light orange darke n-4">
+                Edit</a>
 
-{% endif %}
-</div>
-</div>
-{% endfor %}
+            {% elif session.user == "admin" %}
+            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                class="btn-small  waves-light orange darken-4">
+                Delete</a>
+            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
+                class="btn-small  waves-light orange darke n-4">
+                Edit</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
 </div>
 
 {% endblock %}

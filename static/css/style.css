@@ -12,14 +12,12 @@ body {
 }
 
 /*--Home--*/
-.vew-recipes a span {
-    color: #fff;
-}
 
-.vew-recipes a {
+
+/*.vew-recipes a {
     margin-top: 70px;
 }
-
+*/
 main {
     flex: 1 0 auto;
   }
@@ -34,6 +32,10 @@ main {
 
 .nav-wrapper a em {
    color: #e65100;
+}
+
+.card-reveal h6, p {
+    color: #e65100;
 }
 
 
@@ -51,7 +53,7 @@ main {
 
 }
 
-.recipe-image
+.recipe-image 
 
 {
     min-height: 300px;
@@ -61,7 +63,9 @@ main {
 }
 
 
-
+.btn-large span {
+    color: #fff;
+}
 
 .center-align a {
     color: #e65100;
@@ -119,3 +123,4 @@ input, textarea {
 .cancel-category a {
     color: #fff;
 }
+
