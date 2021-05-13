@@ -39,12 +39,11 @@ main {
 /*-----Card panels with recipes-----*/
 
 .card-reveal h6, p {
-    color: #e65100;
+    color: #fff;
 }
 
 .card .card-reveal {
-    background-color: rgb(145, 30, 30);
-    color: #fff;
+    background-color: #4e342e;
 }
 
 .card-panel {
