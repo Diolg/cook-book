@@ -1,52 +1,73 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# MyCookNoteBook
+[View the live project here]
+## Application for food lovers, who want to store and manage their recipes in one place
+# Project description
+“MyCookNoteBook” is a project that will allow food lovers and those who enjoy frequent cooking to create, update and store recipes with the help of the Application, which is a kind of storage or notebook for recipes for the user. 
+The purpose of the application is to allow food loving users (if they saw, heard, read the recipe somewhere) write down the recipe with quick notes as well as upload an image illustrating a certain recipe, so after some time they can return to it and use it. Users have the ability to store, modify the recipe, and delete it if it is no longer needed.
+In order to attract users to start using the Application, the page with posted recipes is available even for non-logged-in/non-registered users.
+There are 5 categories of Users:
+1.  Generic Users
+2.  Admin (the Application Owner)
+3.  Logged-in Users
+4.  Non-logged-in Users
+5.  Non-registered Users
 
-Welcome Diolg,
+Thus, the Application will help to:
+- Quickly write down favorite recipes.
+- Manage recipes records: store, read, update, delete.
+- Create categories and allocate recipes.
+- Manage categories: store, update, delete.
+- Search for recipes/categories by keywords.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+# User Stories
 
-## Gitpod Reminders
+## Users who want to create and manage recipes 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Generic Users
+-	As a generic user, I want to easily understand the main purpose of the application due to the clear layout.
+-	As a generic user, I want to be able to intuitively navigate through the application.
+-	As a generic user, I want the application be responsive on all devices.
+-	As a generic user, I want to be able to use the application on any device .
+-	As a generic user, I want to be able to navigate the application from any kind of devices. 
 
-`python3 -m http.server`
+## Non logged-in Users
+-	As a non-logged-in user, who is a food or cook lover, I want to easily understand the main purpose of the applcation, which is providing the possibility to write down favorite recipes with quick notes as well as to manage recipes: create, update, delete. (The information will be placed on the Home Page).
+-	As a non-logged-in user, I want to easily understand how i can start using the application. (By SignUp/SignIn function on the home page).  
+-	As a non-logged-in user I want to have a quick access to the recipe page.
+-	As a non-logged-in user I want to be able to use the search option in order to find a recipe i want.
 
-A blue button should appear to click: _Make Public_,
+## Non-registered Users
+-	As a non-registered user, who is a food or cook lover, I want to easily understand the main purpose of the applcation, which is providing the possibility to write down favorite recipes with quick notes as well as to manage recipes: create, update, delete. (The information will be placed on the Home Page).
+-	As a non-registered user I want to easily understand how the page with posted recipes looks like (page Recipes on the navbar)
+-	As a non-registered user I want to be able to read the description of recipes and get inspired of the content.
+-	As a non-registered user, I want to easily understand how i can start using the application. (By SignUp/SignIn function on the home page).   
+-	As a non-registered user, I want to easily sign up in order to start using the application.
 
-Another blue button should appear to click: _Open Browser_.
+## Logged-in Users
+-	As a logged-in user I want to be redirected to my Profile page where i am greeted as a User and from where I can create new recipes or search for recipes. (My page, where the User can find all these options)
+-	As a logged-in user, I want to easily find out how i can put quick notes of a new recipe. (Through navbar Create new recipe or after signing in with the button “Create your recipe” on My page). 
+-	As a logged-in user, I want to easily get any recipe or category by search option.
+-	As a logged-in user, I want to easily find out what kind of the recipe information I can write down (The form will intuitively guide by its fileds: Name, Description, Ingredients).
+-	As a logged-in user, I want to create a recipe record in the easiest way (form with drop down categories ). 
+-	As a logged-in user, I want to easily cancel adding the Recipe (The button cancel below the Create recipe form).
+-	As a logged-in user, I want to upload a recipe image to remember how it looks like (form with the field for the link – source from the Internet). 
+-	As a logged-in user, I want to easily find out how to edit or delete the Recipe.
+-	As a logged-in user, I want to easily cancel editing the Recipe (The button cancel below the Edit recipe form).
+-	As a logged-in user, I want to have basic food categories to where i can allocate my recipes.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Admin
+-	As an Admin, I want to easily sign-in to the website.
+-	As an Admin, I want to have access for editing/deleting any created recipe of any user. 
+-	As an Admin, I want to to have access to the recipes categories with the possibility to manage them (add, edit, delete).
+-	As an Admin, I want the recipes Authors to be able to manage only their own recipes (by buttons “edit”, “delete”)
+-	As an Admin I want to showcase all the created recipes to all users (to logged- or non-logged in users) 
 
-A blue button should appear to click: _Make Public_,
+# Database Model
 
-Another blue button should appear to click: _Open Browser_.
+## Collections:
+1.	![recipes](/static/images/recipes_collection.png)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+2.	![recipes_categories](/static/images/categories_collection.png)
 
-To log into the Heroku toolbelt CLI you can use:
+3.	![users](/static/images/users_collection.png)
 
-`heroku login -i`
-
-If you have Multi-Factor Authentication (MFA) enabled then use the API key that was generated for you at [Heroku](https://dashboard.heroku.com/account) as your password.
-This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
----
-
-Happy coding!

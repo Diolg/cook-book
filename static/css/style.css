@@ -72,6 +72,9 @@ main {
     color: #e65100;
 }
 
+.card .card-image .card-title {
+    color: rgb(230, 9, 9);
+}
 
 /*----Edit Recipe------*/
 
