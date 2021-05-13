@@ -11,16 +11,14 @@ body {
     
 }
 
-/*--Home--*/
+/*-----Style for base.html template--*/
 
 
-/*.vew-recipes a {
-    margin-top: 70px;
-}
-*/
 main {
     flex: 1 0 auto;
   }
+
+/*-----Navbar-----*/
 
 .sidenav li a {
     color: #fff;
@@ -34,13 +32,19 @@ main {
    color: #e65100;
 }
 
+.signup-message {
+    line-height: 5;
+}
+
+/*-----Card panels with recipes-----*/
+
 .card-reveal h6, p {
     color: #e65100;
 }
 
-
-.signup-message {
-    line-height: 5;
+.card .card-reveal {
+    background-color: rgb(145, 30, 30);
+    color: #fff;
 }
 
 .card-panel {
@@ -53,9 +57,7 @@ main {
 
 }
 
-.recipe-image 
-
-{
+.recipe-image {
     min-height: 300px;
     width: 100%;
     object-fit: cover;
@@ -71,18 +73,6 @@ main {
     color: #e65100;
 }
 
-.page-footer {
-    padding: 5px;
-    flex-grow: 0;
-    background-color: #3e2723 ;
-   
-}
-
-/*-----My Page------*/
-
-.mypage h4 {
-    color:#e65100 ;
-}
 
 /*----Edit Recipe------*/
 
@@ -103,6 +93,7 @@ main {
     color: #fff;
 }
 
+/*-----Recipes template-----*/
 .button-add-recipe a {
     color: #fff;
 }
@@ -115,12 +106,25 @@ input, textarea {
     color: #fff;
 }
 
-/*----button cancel adding recipe----*/
+/*----Button cancel/adding recipe----*/
 .cancel-add a {
     color:#fff;
 }
 
+/*----Button cancel category----*/
 .cancel-category a {
     color: #fff;
 }
 
+/*-----My Page template------*/
+
+.mypage h4 {
+    color:#e65100 ;
+}
+/*-----Footer-----*/
+
+.page-footer {
+    padding: 5px;
+    flex-grow: 0;
+    background-color: #3e2723 ;   
+}
