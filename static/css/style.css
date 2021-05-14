@@ -28,6 +28,10 @@ main {
  opacity: 90%;
 }
 
+.sidenav-overlay {
+    height: 0px;
+    width: 0px;
+}
 .nav-wrapper a em {
    color: #e65100;
 }
