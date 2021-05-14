@@ -27,7 +27,13 @@ def home():
 # Page with recipes
 @app.route("/get_recipes")
 def get_recipes():
-    recipes = mongo.db.recipes.find()
+    query = request.args.get("query")
+    if query:   
+        recipes = list(mongo.db.recipes.find({"$text": {"$search": query}})).sort("_id", -1)
+    else:
+        recipes = mongo.db.recipes.find().sort("_id", -1)
+    if not recipes:
+        return render_template("error.html")
     return render_template("recipes.html", recipes=recipes)
 
 
