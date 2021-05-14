@@ -9,6 +9,27 @@
     <h3 class="center-align">Add yours!</h3>
 </div>
 
+
+<!--Search option-->
+<div class="row card-panel brown darken-4">
+        <form action="{{ url_for('get_recipes') }}" method="GET" class="col s12">
+            <div class="row valign-wrapper center-align">
+                <div class="input-field col s12 m8">
+                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                    <label for="query">Search Recipes by keywords</label>
+                </div>
+                <div class="col s12 m4 reset">
+                    <a href="{{ url_for('get_recipes') }}" class="btn orange darken-4 ">Reset</a>
+                    <button type="submit" class=" btn waves-effect waves-light orange">
+                        <i class="fas fa-search left"></i> Search recipes
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
 <!--Recipe Description-->
 
 <div class="row">
