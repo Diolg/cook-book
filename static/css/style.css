@@ -157,14 +157,14 @@ input, textarea {
 
 /*-------Media queries for small devices------*/
 /*-------Mypage buttons "Search" and "Reset"-------------------------*/
-@media(max-width:600px) {
+@media(max-width:650px) {
     .reset-search-mypage {
         margin-top: 7px; 
     
     }
 }
 
-@media(max-width:600px) {
+@media(max-width:650px) {
     .create-recipe a {
     margin-bottom: 7px;
     
@@ -173,7 +173,7 @@ input, textarea {
 
 
 /*--------New Recipe page "Create recipe" button-----*/
-@media(max-width:600px) {
+@media(max-width:650px) {
     .cancel-add a {
     margin-top: 7px;
     
@@ -183,7 +183,7 @@ input, textarea {
 
 /*----------Recipes page-------*/
 
-@media(max-width:600px) {
+@media(max-width:650px) {
     .reset a {
     margin-bottom: 5px;
     
