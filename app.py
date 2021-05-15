@@ -47,6 +47,7 @@ def search():
     return render_template("recipes.html", recipes=recipes)
 
 
+
 # Sign up function
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
@@ -237,4 +238,4 @@ def delete_category(recipes_category_id):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=('DEBUGGING' in os.environ))
