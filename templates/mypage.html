@@ -1,51 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
 
- <div class="row mypage">
-        <div class="col s12 m8 offset-m2"> 
-            <div class="card-panel brown darken-4">
-                <h3 class="center-align">
-                   Hi {{ username }}!
-                </h3>
-                <h4 class="center-align">
-                    In this CookBook you can store, create, update or delete your recipes
-                </h4>
-            </div>
+<div class="row mypage">
+    <div class="col s12 m8 offset-m2">
+        <div class="card-panel brown darken-4">
+            <h3 class="center-align">
+                Hi {{ username }}!
+            </h3>
+            <h4 class="center-align">
+                In this CookBook you can store, create, update or delete your recipes
+            </h4>
         </div>
     </div>
+</div>
 
-    <!--Buttins for creating recipe and viewing all recipes-->
+<!--Buttins for creating recipe and viewing all recipes-->
 
-    <div class="row add_recipe">
-        <div class="col s12 center-align">
-            <a href="{{ url_for('add_recipe') }}" class="btn waves-light orange darken-4">
-                Create your Recipe!
-            </a>
-            <a href="{{ url_for('get_recipes') }}" class="btn waves-light orange darken-4">
-               View all Recipes!
-            </a>
-        </div>
+<div class="row add_recipe">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_recipe') }}" class="btn waves-light orange darken-4">
+            Create your Recipe!
+        </a>
+        <a href="{{ url_for('get_recipes') }}" class="btn waves-light orange darken-4">
+            View all Recipes!
+        </a>
     </div>
+</div>
 
-    <!--Search option for recipes-->
+<!--Search option for recipes-->
 
-    <div class="row card-panel brown darken-4">
-        <form action="{{ url_for('get_recipes') }}" method="GET" class="col s12">
-            <div class="row valign-wrapper center-align">
-                <div class="input-field col s12 m8">
-                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                    <label for="query">Search Recipes by keywords</label>
-                </div>
-                <div class="col s12 m4 reset">
-                    <a href="{{ url_for('get_recipes') }}" class="btn orange darken-4 ">Reset</a>
-                    <button type="submit" class=" btn waves-effect waves-light orange">
-                        <i class="fas fa-search left"></i> Search recipes
-                    </button>
-                </div>
+<div class="row card-panel brown darken-4">
+    <form action="{{ url_for('get_recipes') }}" method="GET" class="col s12">
+        <div class="row valign-wrapper center-align">
+            <div class="input-field col s12 m8">
+                <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                <label for="query">Search Recipes by keywords</label>
             </div>
-        </form>
-    </div>
+            <div class="col s12 m4 reset">
+                <a href="{{ url_for('get_recipes') }}" class="btn orange darken-4 ">Reset</a>
+                <button type="submit" class=" btn waves-effect waves-light orange">
+                    <i class="fas fa-search left"></i> Search recipes
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
 
-     
+
 
 {% endblock %}

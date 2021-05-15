@@ -36,6 +36,13 @@ main {
    color: #e65100;
 }
 
+
+/*-----Sign Up and SIgn In------*/
+
+.button .sign-in {
+    color: white;
+}
+
 .signup-message {
     line-height: 5;
 }
@@ -102,6 +109,7 @@ main {
 /*-----Recipes template-----*/
 .button-add-recipe a {
     color: #fff;
+
 }
 
 .reset a {
@@ -112,9 +120,20 @@ input, textarea {
     color: #fff;
 }
 
+.btn-small .delete-recipe {
+    text-align: center;
+}
+
+.btn-small .edit-recipe {
+    text-align: center;
+}
+
+
+
 /*----Button cancel/adding recipe----*/
 .cancel-add a {
     color:#fff;
+    
 }
 
 /*----Button cancel category----*/

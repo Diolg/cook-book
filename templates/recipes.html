@@ -66,18 +66,18 @@
             {% if recipe.created_by == session.user  %}
 
             <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
-                class="btn-small  waves-light orange darken-4">
+                class="btn-small delete-recipe  waves-light orange darken-4 center-align">
                 Delete</a>
             <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
-                class="btn-small  waves-light orange darke n-4">
+                class="btn-small edit-recipe waves-light orange darke n-4 center-align">
                 Edit</a>
 
             {% elif session.user == "admin" %}
             <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
-                class="btn-small  waves-light orange darken-4">
+                class="btn-small  waves-light orange darken-4 center">
                 Delete</a>
             <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
-                class="btn-small  waves-light orange darke n-4">
+                class="btn-small  waves-light orange darke n-4 center">
                 Edit</a>
             {% endif %}
         </div>
