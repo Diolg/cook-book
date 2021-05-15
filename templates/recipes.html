@@ -35,11 +35,11 @@
         <div class="card brown darken-4 recipes-description recipe-inputs sticky-action">
             <div class=card-image>
                 <img class="recipe-image" src="{{ recipe.link_website }}" alt="{{recipe.recipe_name}}">
-                <span class="card-title"><strong>{{ recipe.recipe_name }}</strong></span>
                 <a class="btn red btn-floating halfway-fab activator">+</a>
             </div>
 
             <div class="card-content">
+                <h6><span>Title:</span> {{ recipe.recipe_name }} </h6>
                 <h6><span>Category:</span> {{ recipe.category_name }}</h6>
                 <h6><span>Created by:</span> {{ recipe.created_by }}</h6>
             </div>
