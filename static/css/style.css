@@ -151,5 +151,57 @@ input, textarea {
 .page-footer {
     padding: 5px;
     flex-grow: 0;
-    background-color: #3e2723 ;   
+    background-color: #3e2723;   
 }
+
+
+/*-------Media queries for small devices------*/
+/*-------Mypage buttons "Search" and "Reset"-------------------------*/
+@media(max-width:600px) {
+    .reset-search-mypage {
+        margin-top: 7px; 
+    
+    }
+}
+
+@media(max-width:600px) {
+    .create-recipe a {
+    margin-bottom: 7px;
+    
+   }          
+}
+
+
+/*--------New Recipe page "Create recipe" button-----*/
+@media(max-width:600px) {
+    .cancel-add a {
+    margin-top: 7px;
+    
+   }          
+}
+
+
+/*----------Recipes page-------*/
+
+@media(max-width:600px) {
+    .reset a {
+    margin-bottom: 5px;
+    
+   }          
+}
+
+
+
+
+
+/*-----Recipe page "Search" button---*/
+/*@media(max-width:600px) {
+    #search {
+        color: #fff;
+     
+    }
+}*/
+
+
+
+
