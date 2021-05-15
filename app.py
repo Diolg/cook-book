@@ -38,13 +38,13 @@ def get_recipes():
 
 
 # Search function in recipes
-@app.route("/search", methods=["GET", "POST"])
+"""@app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     if not recipes:
         return render_template("error.html")
-    return render_template("recipes.html", recipes=recipes)
+    return render_template("recipes.html", recipes=recipes)"""
 
 
 
