@@ -29,12 +29,12 @@
 
     <!--Search option for recipes-->
 
-    <div class="row card-panel brown darken-4 col s12 m8 ">
-        <form action="{{ url_for('search') }}" method="post">
+    <div class="row card-panel brown darken-4">
+        <form action="{{ url_for('get_recipes') }}" method="GET" class="col s12">
             <div class="row valign-wrapper center-align">
                 <div class="input-field col s12 m8">
                     <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                    <label for="query">Search by Recipes</label>
+                    <label for="query">Search Recipes by keywords</label>
                 </div>
                 <div class="col s12 m4 reset">
                     <a href="{{ url_for('get_recipes') }}" class="btn orange darken-4 ">Reset</a>
