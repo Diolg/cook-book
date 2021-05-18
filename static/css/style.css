@@ -43,6 +43,11 @@ main {
 }
 
 /*-----Card panels with recipes-----*/
+
+.card {
+    min-height: 480px;
+}
+
 .card-reveal h6, p {
     color: #fff;
 }
@@ -195,8 +200,42 @@ input, textarea {
    }          
 }
 
+@media(min-width: 1200px) {
+    
+    .card {
+        min-height: 700px;
+    }
+
+    .recipe-image {
+    min-height: 500px;
+    width: 100%;
+    object-fit: cover;
+    align-items: center;
+  }
+
+  .header {
+      margin-top: 300px;
+  }
+}
 
 
+@media(min-width: 992px) {
+    
+    .card {
+        min-height: 700px;
+    }
+
+    .recipe-image {
+    min-height: 500px;
+    width: 100%;
+    object-fit: cover;
+    align-items: center;
+  }
+
+  .header {
+      margin-top: 300px;
+  }
+}
 
 
 
