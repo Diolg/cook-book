@@ -216,8 +216,8 @@ textarea {
 	.reset a {
 		margin-bottom: 5px;
 	}
-	.header {
-		margin-top: 50px;
+	h2.header-text {
+		margin-top: 70px;
 	}
 }
 
@@ -239,7 +239,7 @@ textarea {
 	}
 }
 
-@media(max-width: 992px) {
+@media(max-width: 820px) {
 	.card {
 		min-height: 450px;
 	}
@@ -248,10 +248,8 @@ textarea {
 		width: 100%;
 		object-fit: cover;
 		align-items: center;
-	}
-	.header {
-		margin-top: 200px;
-	}
+    }
+    
 	.search-form {
 		margin-top: 100px;
 	}
