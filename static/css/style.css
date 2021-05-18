@@ -1,3 +1,5 @@
+/*-----Body style for all templates-----*/
+
 body {
     background-image: url(../images/food_wood.jpg);
     background-size: cover;
@@ -6,20 +8,15 @@ body {
     color: white;
     display: flex;
     flex-direction: column;  
-    min-height: 100vh;
-    
-    
+    min-height: 100vh;    
 }
 
-/*-----Style for base.html template--*/
-
-
+/*----- Style for base.html template--*/
 main {
     flex: 1 0 auto;
   }
 
 /*-----Navbar-----*/
-
 .sidenav li a {
     color: #fff;
 }
@@ -36,9 +33,7 @@ main {
    color: #e65100;
 }
 
-
 /*-----Sign Up and SIgn In------*/
-
 .button .sign-in {
     color: white;
 }
@@ -48,7 +43,6 @@ main {
 }
 
 /*-----Card panels with recipes-----*/
-
 .card-reveal h6, p {
     color: #fff;
 }
@@ -64,7 +58,6 @@ main {
 
 .card brown, .recipes-description {
     opacity: 90%;
-
 }
 
 .recipe-image {
@@ -73,7 +66,6 @@ main {
     object-fit: cover;
     align-items: center;
 }
-
 
 .btn-large span {
     color: #fff;
@@ -87,8 +79,7 @@ main {
     color: rgb(230, 9, 9);
 }
 
-/*----Edit Recipe------*/
-
+/*-----Add Recipe------*/
 .add_recipe a {
     color: #fff;
 }
@@ -109,7 +100,6 @@ main {
 /*-----Recipes template-----*/
 .button-add-recipe a {
     color: #fff;
-
 }
 
 .reset a {
@@ -128,12 +118,9 @@ input, textarea {
     text-align: center;
 }
 
-
-
 /*----Button cancel/adding recipe----*/
 .cancel-add a {
-    color:#fff;
-    
+    color:#fff;    
 }
 
 /*----Button cancel category----*/
@@ -142,10 +129,10 @@ input, textarea {
 }
 
 /*-----My Page template------*/
-
 .mypage h4 {
     color:#e65100 ;
 }
+
 /*-----Footer-----*/
 
 .page-footer {
@@ -160,7 +147,6 @@ input, textarea {
 @media(max-width:650px) {
     .reset-search-mypage {
         margin-top: 7px; 
-    
     }
 }
 
@@ -171,12 +157,10 @@ input, textarea {
    }          
 }
 
-
 /*--------New Recipe page "Create recipe" button-----*/
 @media(max-width:650px) {
     .cancel-add a {
-    margin-top: 7px;
-    
+    margin-top: 7px;  
    }          
 }
 
@@ -200,13 +184,7 @@ input, textarea {
 
 
 
-/*-----Recipe page "Search" button---*/
-/*@media(max-width:600px) {
-    #search {
-        color: #fff;
-     
-    }
-}*/
+
 
 
 

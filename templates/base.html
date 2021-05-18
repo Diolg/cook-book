@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +14,7 @@
     {% endblock %}
     <title>CookNoteBook</title>
 </head>
-
 <body>
-
     <header class="navbar-fixed">
         <!-- top navbar -->
         <nav class="nav-extended brown darken-4">
@@ -25,18 +22,14 @@
                 <a href="{{ url_for('home') }}" class="brand-logo">My<em>CookNoteBook</em></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-
-                    
+                    <li><a href="{{ url_for('home') }}">Home</a></li>                   
                     {% if session.user %}
-                    <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
-                    
+                    <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>               
                     <li><a href="{{ url_for('mypage', username=session['user']) }}">My Page</a></li>
                     <li><a href="{{ url_for('add_recipe') }}">New recipe</a></li>
                     {% if session.user|lower == "admin"|lower%}
                     <li><a href="{{ url_for('get_categories')}}">Manage categories</a></li>
                     {% endif %}
-
                     {% else %}
                     <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
                     <li><a href="{{ url_for('signin') }}">Sign In</a></li>
@@ -47,22 +40,16 @@
                 </ul>
             </div>
         </nav>
-
         <!--mobile side navbar-->
         <ul class="sidenav brown darken-4" id="mobile-demo">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-
-            
+            <li><a href="{{ url_for('home') }}">Home</a></li>           
             {% if session.user %}
-            <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
-            
+            <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>          
             <li><a href="{{ url_for('mypage', username=session['user']) }}">My Page</a></li>
             <li><a href="{{ url_for('add_recipe') }}">New recipe</a></li>
-
             {% if session.user|lower == "admin"|lower%}
             <li><a href="{{ url_for('get_categories') }}">Manage categories</a></li>
             {% endif %}
-
             {% else %}
             <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
             <li><a href="{{ url_for('signin') }}">Sign In</a></li>
@@ -72,7 +59,6 @@
             {% endif %}
         </ul>
     </header>
-
     <section class="row center">
         <!-- Flash Messages -->
         {% with messages = get_flashed_messages() %}
@@ -85,16 +71,12 @@
         {% endif %}
         {% endwith %}
     </section>
-
     <!--Main container-->
-
     <main class="container">
         {% block content %}
         {% endblock %}
     </main>
-
     <!--Footer-->
-
     <footer class="page-footer">
         <div class="footer-copyright">
             <div class="container center">

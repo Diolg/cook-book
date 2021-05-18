@@ -2,14 +2,12 @@
 {% block content %}
 
     <h2 class="center-align">Join your <em>CookBook!</em></h2>
-
     <div class="row">
         <form class="col s12 m10 offset-m1" method="POST" action="{{ url_for('signin') }}">
             <div class="card-panel brown darken-4">
                 <!-- username -->
                 <div class="row">
-					<div class="input-field col s12">
-						
+					<div class="input-field col s12">					
 						<input id="username" name="username" type="text" minlength="4"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
 						<label for="username">Username</label>
@@ -17,8 +15,7 @@
                 </div>
                 <!-- passowrd -->
                 <div class="row">
-                    <div class="input-field col s12">
-						
+                    <div class="input-field col s12">					
                         <input id="password" name="password" type="password" minlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="password">Password</label>
@@ -38,7 +35,4 @@
             </div>
         </form>
     </div>
-
-
-
 {% endblock %}

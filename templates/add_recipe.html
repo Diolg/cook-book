@@ -1,30 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 
-
 <h2 class="center-align">Create Your New Recipe!</h2>
-
 <div class="row card-panel brown darken-4">
     <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
-
         <!--Recipe category selection-->
-
         <div class="row">
-            <div class="input-field col s12">
-                
+            <div class="input-field col s12">           
                 <select id="category_name" name="category_name" class="validate" required>
                     <option value="" disabled selected>Select Recipe Category</option>
                     {% for recipes_category in recipes_categories %}
                     <option value="{{ recipes_category.category_name }}">{{ recipes_category.category_name }}</option>
                     {% endfor %}
                 </select>
-                <label for="category_name">Recipe Category</label>
-              
+                <label for="category_name">Recipe Category</label>         
             </div>
         </div>
-
-
-
         <!-- Recipe name -->
         <div class="row">
             <div class="input-field col s12">
@@ -33,7 +24,6 @@
                 <label for="recipe_name">Recipe Name</label>
             </div>
         </div>
-
         <!-- Recipe description -->
         <div class="row">
             <div class="input-field col s12">
@@ -42,9 +32,7 @@
                 <label for="recipe_description">Recipe Description</label>
             </div>
         </div>
-
         <!-- Cooking Time-->
-
         <div class="row">
             <div class="input-field col s12">
                 <textarea id="cooking_time" name="cooking_time" minlength="5" maxlength="200"
@@ -52,30 +40,21 @@
                 <label for="cooking_time">Cooking Time</label>
             </div>
         </div>
-
-
         <!-- Ingredients-->
-
         <div class="row">
             <div class="input-field col s12">
                 <textarea id="ingredients" name="ingredients" minlength="5" maxlength="200"
                     class="materialize-textarea validate" required></textarea>
                 <label for="ingredients">Ingredients</label>
             </div>
-        </div>
-
-        
-        <div class="row">
-             
+        </div>       
+        <div class="row">             
              <div class="input-field col s12">
                 <input type="url" name="link_website" class="form-control" id="link_website" required>
                             <span class="input-group-text">https://example.com/users/</span>
                 <label for="link_website">Image</label>            
             </div>
         </div>
-
-
-
         <!-- Button for adding recipe -->
         <div class="row">
             <div class="col s12 center-align cancel-add">

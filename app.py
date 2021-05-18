@@ -10,19 +10,21 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
-
 app = Flask(__name__)
 
+# Configurations
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 # Home page
 @app.route("/")
 def home():
     return render_template("home.html")
+
 
 # Page with recipes
 @app.route("/get_recipes")
@@ -67,13 +69,13 @@ def signup():
         }
         mongo.db.users.insert_one(signup)
         
-
-        #put the new user into 'session' cookie
+       #put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Welcome! You can start using this app!")
         return redirect(url_for("mypage", username=session["user"]))
 
     return render_template("signup.html")
+
 
 # Sign in function
 @app.route("/signin", methods=["GET", "POST"])
@@ -101,7 +103,7 @@ def signin():
             # username doesn't exist
             flash("Sorry, the Username and/or Password are incorrect!")
             return redirect(url_for("signin"))
-   
+
     return render_template("signin.html")
 
 
@@ -233,7 +235,6 @@ def delete_category(recipes_category_id):
     mongo.db.recipes_categories.remove({"_id":ObjectId(recipes_category_id)})
     flash("You removed the Category Successfully!")
     return redirect(url_for("get_categories"))
-
 
 
 if __name__ == "__main__":

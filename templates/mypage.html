@@ -13,9 +13,7 @@
         </div>
     </div>
 </div>
-
-<!--Buttins for creating recipe and viewing all recipes-->
-
+<!--Buttons for creating recipe and viewing all recipes-->
 <div class="row add_recipe">
     <div class="col s12 center-align create-recipe">
         <a href="{{ url_for('add_recipe') }}" class="btn waves-light orange darken-4 ">
@@ -26,9 +24,7 @@
         </a>
     </div>
 </div>
-
 <!--Search option for recipes-->
-
 <div class="row card-panel brown darken-4">
     <form action="{{ url_for('search') }}" method="post" class="col s12">
         <div class="row valign-wrapper center-align">
@@ -45,7 +41,4 @@
         </div>
     </form>
 </div>
-
-
-
 {% endblock %}

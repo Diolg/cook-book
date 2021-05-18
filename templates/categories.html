@@ -5,7 +5,6 @@
 <div class="recipe-text">
     <h2 class="center-align">Modify Categories</h2>
 </div>
-
 <div class="row">
     <div class="col s12 center-align category-button">
         <a href="{{ url_for('add_category') }}" class="btn-large orange darken-4">
@@ -13,10 +12,7 @@
         </a>
     </div>
 </div>
-
 <!--Categories-->
-
-
 <div class="row center">
     {% for recipes_category in recipes_categories %}
     <div class="col s12 m4">
@@ -36,6 +32,4 @@
     </div>
     {% endfor %}
 </div>
-
-
 {% endblock %}
