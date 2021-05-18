@@ -1,4 +1,8 @@
 # MyCookNoteBook
+
+![Home page](/static/images/screen_home.png)
+![Recipe page](/static/images/screen_recipes.png)
+
 [View the live project here]
 ## Application for food lovers, who want to store and manage their recipes in one place
 # Project description
