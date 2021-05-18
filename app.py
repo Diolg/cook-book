@@ -110,6 +110,9 @@ def signin():
 # Opening User's profile function
 @app.route("/mypage/<username>", methods=["GET", "POST"])
 def mypage(username):
+    if not session.get("user"):
+        return render_template("error_recipes.html")
+
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -120,7 +123,7 @@ def mypage(username):
     return redirect(url_for("signin"))
 
 
-# Page with recipes
+# Sign out function
 @app.route("/signout")
 def signout():
     # remove user from session cookie
