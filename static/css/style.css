@@ -1,243 +1,258 @@
 /*-----Body style for all templates-----*/
 
 body {
-    background-image: url(../images/food_wood.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
-    color: white;
-    display: flex;
-    flex-direction: column;  
-    min-height: 100vh;    
+	background-image: url(../images/food_wood.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
+
 /*----- Style for base.html template--*/
+
 main {
-    flex: 1 0 auto;
-  }
+	flex: 1 0 auto;
+}
+
 
 /*-----Navbar-----*/
+
 .sidenav li a {
-    color: #fff;
+	color: #fff;
 }
 
 .sidenav {
- opacity: 90%;
+	opacity: 90%;
 }
 
 .sidenav-overlay {
-    height: 0px;
-    width: 0px;
-}
-.nav-wrapper a em {
-   color: #e65100;
+	height: 0px;
+	width: 0px;
 }
 
+.nav-wrapper a em {
+	color: #e65100;
+}
+
+
 /*-----Sign Up and SIgn In------*/
+
 .button .sign-in {
-    color: white;
+	color: white;
 }
 
 .signup-message {
-    line-height: 5;
+	line-height: 5;
 }
+
 
 /*-----Card panels with recipes-----*/
 
-.card {
-    min-height: 480px;
-}
-
-.card-reveal h6, p {
-    color: #fff;
+.card-reveal h6,
+p {
+	color: #fff;
 }
 
 .card .card-reveal {
-    background-color: #4e342e;
+	background-color: #4e342e;
 }
 
 .card-panel {
-    box-shadow: 0 0 20px 7px rgba(0,0,0,0.5);
-    opacity: 90%;
+	box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.5);
+	opacity: 90%;
 }
 
-.card brown, .recipes-description {
-    opacity: 90%;
+.card brown,
+.recipes-description {
+	opacity: 90%;
+}
+
+.card {
+	min-height: 480px;
 }
 
 .recipe-image {
-    min-height: 300px;
-    width: 100%;
-    object-fit: cover;
-    align-items: center;
+	min-height: 300px;
+	width: 100%;
+	object-fit: cover;
+	align-items: center;
 }
 
 .btn-large span {
-    color: #fff;
+	color: #fff;
 }
 
 .center-align a {
-    color: #e65100;
+	color: #e65100;
 }
 
 .card .card-image .card-title {
-    color: rgb(230, 9, 9);
+	color: rgb(230, 9, 9);
 }
 
+
 /*-----Add Recipe------*/
+
 .add_recipe a {
-    color: #fff;
+	color: #fff;
 }
 
 .recipe-inputs span {
-    color:#e65100;
+	color: #e65100;
 }
 
 .dropdown-content li>span,
-.dropdown-content li>a
- {
-    background-color: #4e342e; 
-    color: #e65100; 
+.dropdown-content li>a {
+	background-color: #4e342e;
+	color: #e65100;
 }
 
-.select-dropdown li.disabled>span
-{
-    background-color: #4e342e; 
-    color: #fff; 
+.select-dropdown li.disabled>span {
+	background-color: #4e342e;
+	color: #fff;
 }
+
 
 /*------Categories---------*/
+
 .view-categories {
-    color: #e65100;
+	color: #e65100;
 }
 
 .category-button a {
-    color: #fff;
+	color: #fff;
 }
 
+
 /*-----Recipes template-----*/
+
 .button-add-recipe a {
-    color: #fff;
+	color: #fff;
 }
 
 .reset a {
-    color: #fff;
+	color: #fff;
 }
 
-input, textarea {
-    color: #fff;
+input,
+textarea {
+	color: #fff;
 }
 
 .btn-small .delete-recipe {
-    text-align: center;
+	text-align: center;
 }
 
 .btn-small .edit-recipe {
-    text-align: center;
+	text-align: center;
 }
+
 
 /*----Button cancel/adding recipe----*/
+
 .cancel-add a {
-    color:#fff;    
+	color: #fff;
 }
+
 
 /*----Button cancel category----*/
+
 .cancel-category a {
-    color: #fff;
+	color: #fff;
 }
 
+
 /*-----My Page template------*/
+
 .mypage h4 {
-    color:#e65100 ;
+	color: #e65100;
 }
+
 
 /*-----Footer-----*/
 
 .page-footer {
-    padding: 5px;
-    flex-grow: 0;
-    background-color: #3e2723;   
+	padding: 5px;
+	flex-grow: 0;
+	background-color: #3e2723;
 }
 
 
 /*-------Media queries for small devices------*/
+
+
 /*-------Mypage buttons "Search" and "Reset"-------------------------*/
+
 @media(max-width:650px) {
-    .reset-search-mypage {
-        margin-top: 7px; 
-    }
+	.reset-search-mypage {
+		margin-top: 7px;
+	}
 }
 
 @media(max-width:650px) {
-    .create-recipe a {
-    margin-bottom: 7px;
-    
-   }          
+	.create-recipe a {
+		margin-bottom: 7px;
+		margin-top: 30px;
+	}
 }
+
 
 /*--------New Recipe page "Create recipe" button-----*/
+
 @media(max-width:650px) {
-    .cancel-add a {
-    margin-top: 7px;  
-   }          
+	.cancel-add a {
+		margin-top: 7px;
+	}
 }
 
 
 /*----------Recipes page-------*/
 
-@media(max-width:650px) {
-    .reset a {
-    margin-bottom: 5px;
-    
-   }          
+@media(max-width:600px) {
+	.reset a {
+		margin-bottom: 5px;
+	}
+	.header {
+		margin-top: 50px;
+	}
 }
 
-
-@media(max-width:750px) {
-    .add_recipe a {
-    margin-top: 100px;
-    
-   }          
+@media(min-width: 1400px) {
+	.card {
+		min-height: 700px;
+	}
+	.recipe-image {
+		min-height: 500px;
+		width: 100%;
+		object-fit: cover;
+		align-items: center;
+	}
+	.header {
+		margin-top: 300px;
+	}
+	.search-form {
+		margin-top: 200px;
+	}
 }
 
-@media(min-width: 1200px) {
-    
-    .card {
-        min-height: 700px;
-    }
-
-    .recipe-image {
-    min-height: 500px;
-    width: 100%;
-    object-fit: cover;
-    align-items: center;
-  }
-
-  .header {
-      margin-top: 300px;
-  }
+@media(max-width: 992px) {
+	.card {
+		min-height: 450px;
+	}
+	.recipe-image {
+		min-height: 250px;
+		width: 100%;
+		object-fit: cover;
+		align-items: center;
+	}
+	.header {
+		margin-top: 200px;
+	}
+	.search-form {
+		margin-top: 100px;
+	}
 }
-
-
-@media(min-width: 992px) {
-    
-    .card {
-        min-height: 700px;
-    }
-
-    .recipe-image {
-    min-height: 500px;
-    width: 100%;
-    object-fit: cover;
-    align-items: center;
-  }
-
-  .header {
-      margin-top: 300px;
-  }
-}
-
-
-
-
-
