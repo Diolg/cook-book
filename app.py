@@ -135,6 +135,9 @@ def signout():
 # Add recipes function
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    if not session.get("user"):
+        return render_template("error_recipes.html")
+
     if request.method == "POST":
         recipe = {
             "category_name": request.form.get("category_name"),
