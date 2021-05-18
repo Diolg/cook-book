@@ -159,9 +159,9 @@ def add_recipe():
 # Edit recipes function
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    
     if not session.get("user"):
-        flash("Please, sign up or sign in first!")
-        return render_template("signup.html")
+        return render_template("error_recipes.html")
 
     if request.method == "POST":
         submit = {
