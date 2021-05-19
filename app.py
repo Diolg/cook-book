@@ -187,8 +187,7 @@ def edit_recipe(recipe_id):
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     if not session.get("user"):
-        flash("Please, sign up or sign in first!")
-        return render_template("signup.html")
+        return render_template("error_recipes.html")
 
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe is Deleted")
@@ -199,7 +198,6 @@ def delete_recipe(recipe_id):
 @app.route("/get_categories")
 def get_categories():
     if not session.get("user") =="admin":
-        '''flash("Sorry, you don't have access to this page")'''
         return render_template("error_permission.html")
 
     recipes_categories = list(mongo.db.recipes_categories.find().sort("category_name", 1))
@@ -209,6 +207,9 @@ def get_categories():
 # Add category function
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
+    if not session.get("user") =="admin":
+        return render_template("error_permission.html")
+
     if request.method == "POST":
         recipe_category = {
             "category_name": request.form.get("category_name")
@@ -223,6 +224,9 @@ def add_category():
 # Edit category function
 @app.route("/edit_category, <recipes_category_id>", methods=["GET", "POST"])
 def edit_category(recipes_category_id):
+    if not session.get("user") =="admin":
+        return render_template("error_permission.html")
+
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name")
@@ -238,6 +242,9 @@ def edit_category(recipes_category_id):
 # Delete category function
 @app.route("/delete_category, <recipes_category_id>")
 def delete_category(recipes_category_id):
+    if not session.get("user") =="admin":
+        return render_template("error_permission.html")
+
     mongo.db.recipes_categories.remove({"_id":ObjectId(recipes_category_id)})
     flash("You removed the Category Successfully!")
     return redirect(url_for("get_categories"))
