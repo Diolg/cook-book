@@ -30,10 +30,11 @@ def home():
 @app.route("/get_recipes")
 def get_recipes():
     if not session.get("user"):
-         return render_template("error_recipes.html")
+        return render_template("error_recipes.html")
     query = request.args.get("query")
-    if query:   
-        recipes = list(mongo.db.recipes.find({"$text": {"$search": query}})).sort("_id", -1)
+    if query:
+        recipes = list(mongo.db.recipes.find(
+            {"$text": {"$search": query}})).sort("_id", -1)
     else:
         recipes = mongo.db.recipes.find().sort("_id", -1)
     if not recipes:
@@ -45,8 +46,8 @@ def get_recipes():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     if not session.get("user"):
-         return render_template("error_recipes.html")
-         
+        return render_template("error_recipes.html")
+
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     if not recipes:
@@ -71,8 +72,8 @@ def signup():
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(signup)
-        
-       #put the new user into 'session' cookie
+
+    # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Welcome! You can start using this app!")
         return redirect(url_for("mypage", username=session["user"]))
@@ -149,21 +150,22 @@ def add_recipe():
             "cooking_time": request.form.get("cooking_time"),
             "ingredients": request.form.get("ingredients"),
             "link_website": request.form.get("link_website"),
-            "created_by": session["user"]           
-        }
+            "created_by": session["user"]
+            }
         mongo.db.recipes.insert_one(recipe)
         flash("Your recipe is added to the CookBook!")
         return redirect(url_for("get_recipes"))
 
-    recipes_categories = mongo.db.recipes_categories.find().sort("category_name", 1)
+    recipes_categories = \
+        mongo.db.recipes_categories.find().sort("category_name", 1)
     return render_template(
-        "add_recipe.html", recipes_categories = recipes_categories)
+        "add_recipe.html", recipes_categories=recipes_categories)
 
 
 # Edit recipes function
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    
+
     if not session.get("user"):
         return render_template("error_recipes.html")
 
@@ -182,9 +184,11 @@ def edit_recipe(recipe_id):
         return redirect(url_for("get_recipes"))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    recipes_categories = mongo.db.recipes_categories.find().sort("category_name", 1)
-    return render_template(
-        "edit_recipe.html", recipe=recipe, recipes_categories=recipes_categories)
+    recipes_categories = \
+        mongo.db.recipes_categories.find().sort("category_name", 1)
+    return render_template("edit_recipe.html",
+                           recipe=recipe,
+                           recipes_categories=recipes_categories)
 
 
 # Delete recipes function
@@ -201,17 +205,19 @@ def delete_recipe(recipe_id):
 # Open categories page for Admin function
 @app.route("/get_categories")
 def get_categories():
-    if not session.get("user") =="admin":
+    if not session.get("user") == "admin":
         return render_template("error_permission.html")
 
-    recipes_categories = list(mongo.db.recipes_categories.find().sort("category_name", 1))
-    return render_template("categories.html", recipes_categories=recipes_categories)
+    recipes_categories = list(
+        mongo.db.recipes_categories.find().sort("category_name", 1))
+    return render_template(
+        "categories.html", recipes_categories=recipes_categories)
 
 
 # Add category function
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
-    if not session.get("user") =="admin":
+    if not session.get("user") == "admin":
         return render_template("error_permission.html")
 
     if request.method == "POST":
@@ -228,28 +234,31 @@ def add_category():
 # Edit category function
 @app.route("/edit_category, <recipes_category_id>", methods=["GET", "POST"])
 def edit_category(recipes_category_id):
-    if not session.get("user") =="admin":
+    if not session.get("user") == "admin":
         return render_template("error_permission.html")
 
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name")
         }
-        mongo.db.recipes_categories.update({"_id":ObjectId(recipes_category_id)}, submit)
+        mongo.db.recipes_categories.update(
+            {"_id": ObjectId(recipes_category_id)}, submit)
         flash("You have updated the Category")
         return redirect(url_for("get_categories"))
 
-    recipes_category = mongo.db.recipes_categories.find_one({"_id": ObjectId(recipes_category_id)})
-    return render_template("edit_category.html", recipes_category=recipes_category)
+    recipes_category = mongo.db.recipes_categories.find_one(
+        {"_id": ObjectId(recipes_category_id)})
+    return render_template(
+        "edit_category.html", recipes_category=recipes_category)
 
 
 # Delete category function
 @app.route("/delete_category, <recipes_category_id>")
 def delete_category(recipes_category_id):
-    if not session.get("user") =="admin":
+    if not session.get("user") == "admin":
         return render_template("error_permission.html")
 
-    mongo.db.recipes_categories.remove({"_id":ObjectId(recipes_category_id)})
+    mongo.db.recipes_categories.remove({"_id": ObjectId(recipes_category_id)})
     flash("You removed the Category Successfully!")
     return redirect(url_for("get_categories"))
 
