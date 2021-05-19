@@ -156,7 +156,8 @@ def add_recipe():
         return redirect(url_for("get_recipes"))
 
     recipes_categories = mongo.db.recipes_categories.find().sort("category_name", 1)
-    return render_template("add_recipe.html", recipes_categories = recipes_categories)
+    return render_template(
+        "add_recipe.html", recipes_categories = recipes_categories)
 
 
 # Edit recipes function
