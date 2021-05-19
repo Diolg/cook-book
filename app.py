@@ -33,6 +33,7 @@ def get_recipes():
         return render_template("error_recipes.html")
     query = request.args.get("query")
     if query:
+        """Displays new recipes first"""
         recipes = list(mongo.db.recipes.find(
             {"$text": {"$search": query}})).sort("_id", -1)
     else:
@@ -45,6 +46,7 @@ def get_recipes():
 # Search function in recipes
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    # limitates regular user from getting recipes
     if not session.get("user"):
         return render_template("error_recipes.html")
 
@@ -139,6 +141,7 @@ def signout():
 # Add recipes function
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    # limitates regular user from adding recipes
     if not session.get("user"):
         return render_template("error_recipes.html")
 
@@ -165,7 +168,7 @@ def add_recipe():
 # Edit recipes function
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-
+    # limitates regular user from editing recipes
     if not session.get("user"):
         return render_template("error_recipes.html")
 
@@ -194,6 +197,7 @@ def edit_recipe(recipe_id):
 # Delete recipes function
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
+    # limitates regular user from deleting recipes
     if not session.get("user"):
         return render_template("error_recipes.html")
 
@@ -205,6 +209,7 @@ def delete_recipe(recipe_id):
 # Open categories page for Admin function
 @app.route("/get_categories")
 def get_categories():
+    # limitates regular user from getting categories
     if not session.get("user") == "admin":
         return render_template("error_permission.html")
 
@@ -217,6 +222,7 @@ def get_categories():
 # Add category function
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
+    # limitates regular user from adding categories
     if not session.get("user") == "admin":
         return render_template("error_permission.html")
 
