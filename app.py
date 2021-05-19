@@ -195,12 +195,12 @@ def delete_recipe(recipe_id):
     return redirect(url_for("get_recipes"))
 
 
-# Open categores page for Admin function
+# Open categories page for Admin function
 @app.route("/get_categories")
 def get_categories():
     if not session.get("user") =="admin":
-        flash("Sorry, you don't have access to this page")
-        return render_template("mypage.html")
+        '''flash("Sorry, you don't have access to this page")'''
+        return render_template("error_permission.html")
 
     recipes_categories = list(mongo.db.recipes_categories.find().sort("category_name", 1))
     return render_template("categories.html", recipes_categories=recipes_categories)
