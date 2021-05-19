@@ -27,7 +27,9 @@
     <div class="col s12 m4 14">
         <div class="card brown darken-4 recipes-description recipe-inputs sticky-action">
             <div class=card-image>
-                <img class="recipe-image" src="{{ recipe.link_website }}" alt="{{recipe.recipe_name}}">
+                <p id="demo"></p>
+                <img class="recipe-image" src="{{ recipe.link_website }}" alt="{{recipe.recipe_name}}" 
+                onerror="myFunction()" />
                 <a class="btn red btn-floating halfway-fab activator "><i class="large material-icons">
                         expand_less</i></a>
             </div>
