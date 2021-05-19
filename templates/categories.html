@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-
+<!--Page header-->
 <div class="recipe-text">
     <h2 class="center-align">Modify Categories</h2>
 </div>
@@ -20,6 +20,7 @@
             <h6><span class="view-categories">Category:</span> {{ recipes_category.category_name }} </h6>
             <div class="row center">
                 <div class="column s12">
+<!--Delete and Edit Buttons-->
                     <a href="{{ url_for('delete_category', recipes_category_id=recipes_category._id) }}"
                         class="btn-small  waves-light orange darken-4">
                         Delete</a>
