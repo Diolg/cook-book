@@ -44,6 +44,9 @@ def get_recipes():
 # Search function in recipes
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    if not session.get("user"):
+         return render_template("error_recipes.html")
+         
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     if not recipes:
