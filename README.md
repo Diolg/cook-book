@@ -178,7 +178,7 @@ The large, background image with a culinary theme is applied to convey the main 
 In case if the user’s recipe image cannot be loaded, the customized “Try again” image created by the author will be displayed.  
 
 # Wireframes  
-![Here you can find the wireframes](/static/images/wireframes_cookbook.pdf)
+[Here you can find the wireframes](/static/images/wireframes_cookbook.pdf)
 
 
 # Features
