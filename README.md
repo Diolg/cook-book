@@ -175,7 +175,12 @@ When the recipes are added/edited the respective flash message appears, so the u
 The owner used  BlinkMacSystemFont type for all  text content, including buttons. The reason for choosing this font is that it has a comfortable look and easy to read on any device. At the same time it is stylish and matches the rest of the website design.
 ## Imagery
 The large, background image with a culinary theme is applied to convey the main idea of the website.  This image is provided throughout all application’s pages to keep the style consistency. The main part of this image is wooden-brown background that creates the homely atmosphere and makes all the content, especially the posted recipes with images, easy to percieve.
-In case if the user’s recipe image cannot be loaded, the customized “Try again” image created by the author will be displayed.
+In case if the user’s recipe image cannot be loaded, the customized “Try again” image created by the author will be displayed.  
+
+# Wireframes  
+![wireframes](/static/images/wireframes_cookbook.pdf)
+
+
 # Features
 
 ## Existing features
@@ -226,5 +231,69 @@ This feature helps users when clicking the red button on the recipe card to easi
 
 # Technologies Used
 
-## Languages Used
+## Languages Used  
+
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS3](https://en.wikipedia.org/wiki/CSS)
+-   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+-   [jQuery](https://en.wikipedia.org/wiki/JQuery)
+-   [Python](https://en.wikipedia.org/wiki/Python_(programming_language))  
+
+## Frameworks, Libraries & Programs Used
+-   [Materialize 1.0.0]( https://materializecss.com/)
+    I used Materialize to provide the responsiveness and styling of the website as well as navigation bar, footer, buttons, panel cards and cards reveal.
+-   [jQuery](https://jquery.com/) 
+    jQuery comes with Materialize to make the navbar and the application in a whole responsive.
+-   [Flask](https://flask.palletsprojects.com/en/1.1.x/) Flask is the web framework for the app.  
+-   [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) Is used for the Python template.  
+-   [Heroku](https://dashboard.heroku.com/) The cloud platform for deploying the app.  
+    [MongoDB](https://www.mongodb.com/1) The application data platform  
+    [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/) Used for the for password hashing/authentication as well as authorization. 
+-   [Git](https://git-scm.com/) 
+    I used Git for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+-   [GitHub](https://github.com/) 
+    I used GitHub to store the projects code after being pushed from Git.
+-   [Balsamiq](https://balsamiq.com/) 
+    I used Balsamiq to create initial wireframes for the project design.
+-   [AmIResponsive]( http://ami.responsivedesign.is/)  
+    I used this service for making my project screenshots
+-   [W3C Markup Validation Service](https://validator.w3.org/) 
+    I used this service for testing HTML
+-   [W3C CSS Validation Service](https://jigsaw.w3.org/) 
+    I used this service for testing CSS
+-   [JSHint](https://jshint.com/)
+    I used this service for possible errors identification in the JS code
+-   [Realfavicongenerator]( https://realfavicongenerator.net/)
+    I used this service for generating favicon for the website
+-   [PEP8 online]( http://pep8online.com/)
+    I used this service for possible errors identefication in the Python code
+-   [Iconfinder](https://www.iconfinder.com/search/?q=castle&price=free)
+         I used it to generate icon for website favicon
+-   [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+         I used it to audit performance of the application
+-   Chrome Developer Tools 
+    I used this service to test code changes and responsivity of landing page.  
+
+
+# Credits
+
+## Code
+-	[Materialize 1.0.0]( https://materializecss.com/)
+Materialize Library was used to make a responsive navigation bar, footer and throughout the project to make website responsive.
+-	A lot of hints were found on [CSS-tricks]( https://css-tricks.com/), [W3schools](https://www.w3schools.com/), [Stackoverflow](https://stackoverflow.com/)
+-	To get some more information on setting users log in system i used the tutorial of: [Luke Peters](https://www.youtube.com/watch?v=w1STSSumoVk)
+-	The biggest support for this project has become the Task Manager Mini Project, provided by the Code Institute, including the JS code for the forms validation. 
+
+## Content  
+
+-   All text content was created by developer.
+-   The recipes descroption was taken for the demonstration purposes from [Allrecipes](https://www.allrecipes.com/)
+
+## Media  
+
+-   The background image: [Pexels](https://www.pexels.com/photo/table-on-wooden-plank-326279/)
+-   The URL for recipes' images were taken from different sources just for demonstration purposes.
+
+
+
 
