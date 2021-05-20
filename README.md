@@ -247,8 +247,8 @@ This feature helps users when clicking the red button on the recipe card to easi
 -   [Flask](https://flask.palletsprojects.com/en/1.1.x/) Flask is the web framework for the app.  
 -   [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) Is used for the Python template.  
 -   [Heroku](https://dashboard.heroku.com/) The cloud platform for deploying the app.  
-    [MongoDB](https://www.mongodb.com/1) The application data platform  
-    [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/) Used for the for password hashing/authentication as well as authorization. 
+-   [MongoDB](https://www.mongodb.com/1) The application data platform  
+-   [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/) Used for the for password hashing/authentication as well as authorization. 
 -   [Git](https://git-scm.com/) 
     I used Git for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 -   [GitHub](https://github.com/) 
@@ -273,6 +273,64 @@ This feature helps users when clicking the red button on the recipe card to easi
          I used it to audit performance of the application
 -   Chrome Developer Tools 
     I used this service to test code changes and responsivity of landing page.  
+
+
+
+# Deployment
+
+The CookNoteBook application project was created on Gitpod.   
+All commits to git pushed the project to the GitHub repository. The deployment was executed to Heroku to see the live site.   
+The pushes to GitHub automatically pushed to Heroku to update the live site.  
+
+### Running CookNoteBook application project Online Locally
+
+# GitHub
+
+## Cloning the project from GitHub
+The project will only run locally if an env.py file is set up with the IP, PORT, SECRET_KEY, MONGO-URI and MONGO_DBNAME. In order to secure sensitive information these details can not be shared on this documentation. The env.py file should be added to your gitignore file.  
+1.	Navigate to Diolg/cook-book
+2.	Click on the green Code button
+3.	Select the code dropdown button beside the Gitpod button
+4.	Copy the URL listed.
+5.	Start up your IDE and navigate to the file location.
+6.	To clone, copy this code and input it into your terminal:
+(https://github.com/Diolg/cook-book)  
+
+## Forking the GitHub Repository
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps:
+1.	Log in to GitHub and locate the [GitHub Repository](https://github.com/Diolg/cook-book)
+2.	At the top-right of the page, just below the GitHub navigation bar, the "Fork" Button is located.
+3.	Click the “Fork” button and get a copy of the original repository to a GitHub account.
+
+# Heroku
+
+## Deployment to Heroku
+
+### Create the application:
+- Login in to heroku.com
+- Click on New, and Create new app
+- Enter your app name
+- Select the region that is closest to you
+
+### Connect to you GitHub repository
+-	Click Deploy and select GitHub - Connect to GitHub
+-	Enter your repository name and search
+-	Click Connect on the correct repository  
+
+### Set Your Environment Variables
+
+### Go to settings, and within Config Vars enter the following
+-	IP: 0.0.0.0
+-	PORT: 5000
+-	MONGO_DBNAME: (enter the database name that you are connecting to)  
+-	MONGO_URI: (enter your mongo uri. This is found by going to clusters> connect> connect to your application and entering your passwords and dbname within the link)  
+-	SECRET_KEY: (This is a secret password that must be very secure.)  
+
+### Enable Automatic Deploys
+
+-	Go to the deploy tab  
+-	Within the automatic deploys section, choose the branch that you want to deploy from and select Enable Automatic Deploys. 
+  
 
 
 # Credits
