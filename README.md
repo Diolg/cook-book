@@ -303,6 +303,14 @@ There was no major issues found.
 [User's profile page](static/testing_html/mypage.png)  
 [Home page](static/testing_html/home.png)  
 
+Only some warnings were found.  
+
+- Lighthouse
+
+[Home page](static/testing_lighthouse/light_house_home.png)  
+[User's profile page](static/testing_lighthouse/light_house_mypage.png)  
+[Sign in page](static/testing_lighthouse/light_house_signin.png)  
+
 
 # Manual testing of all elements and funcionality
 
@@ -506,6 +514,13 @@ c. managing categories
 d. having access to their or other users profiles  
 
 In all these cases the non-logged in User will be redirected to customized error-handlers pages with the respective messages and further guidance.
+
+## Further Testing
+
+- The website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
+- The website was viewed on a variety of devices such as Desktop, Laptop, iPhone 8, Xiaomi Mi Note 10, Xiaomi Note 10 Pro.
+- A large amount of testing was done to ensure that all internal/external links work correctly.
+- Friends and family members were asked to review the website to point out any bugs and/or user experience issues.
 
 
   
