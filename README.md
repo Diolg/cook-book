@@ -198,7 +198,8 @@ In case if the user’s recipe image cannot be loaded, the customized “Try aga
 7.	“RECIPES” - when clicked, leads the user to the all posted recipes page
 8.	“NEW RECIPE” - when clicked, leads the user to the validated form to fill in the information about the recipes
 9.	“EDIT RECIPE” - when clicked, leads the user to the validated form with the populated input fields  to edit the information about the recipes
-10.	“MANAGE CATEGORIES” - when clicked, leads the Admin to the displayed within cards Categories.
+10.	“MANAGE CATEGORIES” - when clicked, leads the Admin to the displayed within cards Categories.  
+
 All pages are fully responsive on all devices.
 
 -	Buttons  
@@ -273,6 +274,203 @@ This feature helps users when clicking the red button on the recipe card to easi
          I used it to audit performance of the application
 -   Chrome Developer Tools 
     I used this service to test code changes and responsivity of landing page.  
+
+# Testing
+
+A lot of testing was carried out, including Google Chrome developer tools, manual testing on desktops, laptops, mobile devices as well as different browsers (more detailed in the “Further Testing section”). The owner’s friends and family were asked to provide the feedback and test the website, what was considered in order to make the website more attractive visually and easier to navigate (more details in the “Known Bugs” section).
+
+# Manual testing of all elements and funcionality
+
+- Navigation bar
+1. Click all the navbar items to verify they work properly and lead to respective pages.
+2. Change the screen size (desktop, tablet, mobile) to make ensure that the navigation bar is collapsible and the toggle button functions properly.
+3. Non-logged in users see: Home, Sign In, Sign Up options.
+4. Logged-in users see: Home, Recipes, My Page, New Recipe, Sign Out options.
+5. Admin sees: Home, Recipes, My Page, New Recipe, Manage Categories, Sign Out options. 
+
+- Footer 
+1. Resize window width to check the footer resposivity on different devices.
+
+- Home Page
+1. A non-logged user sees the displayed links "Home", "Sign UP", "Sign In" on the navigation bar, which redirect to respective pages.
+2. The "View recipes" button redirects non-logged user to the error handler page with the "Sorry" message and advice to sign-in/sign-up first.
+3. The "View recipes" button redirects logged-in user to the "Recipe" page.
+
+- Sign-in/ Sign-up links on the navbar
+1. When hitting them, the user is redirected to a separate page with the fill on form: "username","password"
+2. If when siginin-up the user name already exists, user will get the flash message.
+3. If the user did not fill in an input field a red line will appear
+4. If the user wants to sign-up/sign-in without filling in the form, they will see the reminder to do that in the input fields.
+5. Redirect users to "My Page" with a greeting and buttons "create your recipe"/"view all recipes"
+2. "create your recipe" leads to the form for creating a recipe
+3. "view all recipes" leads to the page with all displayed recipes
+
+- "Create your recipe" from "Mypage"
+1. A validated form appears.
+2. If the user did not fill in an input field a red line will appear, otherwise the green line will shoe that everything is correct.
+3. A drop down menu for choosing category appears.
+4. User provides a link to load the image in the indicated format.
+5. If the image cannot be loaded, user will see the default image with the text "Try again". 
+6. Button "create recipe" leads to the "Recipes" page.
+7. Button "cancel" allows to go back to the "Recipes" page.
+
+- "New Recipe" on the navbar
+1. Redirects to the "Create your recipe" form with all the funcionality mentioned above.
+2. When the recipe is created, a flash success message appears.
+3. New recipe appears first in the list.
+
+- "Recipes" page
+1. All recipes are displayed.
+2. Logged-in users sees all recipes but sees "delete"/"edit" buttons only on his/her recipes
+3. "delete" buttin deletes the recipe and leaves the user on the same page.
+4. "edit" button redirects to the "Edit your recipe" form with the populated fields.
+5. After hitting the "edit" button the user is redirected to the "Recipes" page and sees a susscess flash message. 
+
+- Recipes cards with the image on the "Recipes" page
+1. User hitts the red circle button and sees the card reveal opened with the detailed recipe description.
+2. To close the reveal user hits the red circle button on the top left.
+
+- Search option on the "Recipes" page
+1. User enters any word from the name/description/ingredients/category of any recipe displayed and sees the selected results.
+2. User can reset the search with the "reset" button.
+
+- Sign Out
+1. When sign out, the user sees the sig-in/sign up form again with the flash message "See you soon".
+
+- Logged-n as Admin
+1. Admin is redirected to his/her profile page with the same functionality
+2. Admin sees "Manage Categories" link on the navbar.
+3. When hits the "Manage Categories", Admin is redirected to the separate page with Categories.
+4. There is "Create new category" button on the top, which redirects to an validated input field with "create new category"/"cancel" buttons.
+5. "cancel" cleans up the input field.
+6. If the field is empty, when hitting the "create new category" button a reminder in the input field will appear as well as the red line.
+7. "create new category" button redirects again to the "Manage categories" page, with the flash success message.
+8. Categories have "delete"/"edit" buttons.
+9. "Edit" button redirects again to the form with one populated input field.
+10. Admin can cancel editing.
+9. Admin can succsessful delete the category (a success flash message will appear).
+
+- Non-logged-in/logged-in users testing
+1. If a non-logged-in user tries to access the "Recipes"/"New recipe"/"Search"/"My page" pages in the browser by the route name, a custom page with "Sorry" message and registration form will appear.
+2. If a non-logged-in/logged-in user tries to access the "Manage categories"/"Add category" pages in the browser by the route name, a custom page with "Sorry, you need to be authorized as Admin to access this page" message will appear.
+3. If a non-logged-in/logged-in user tries to access the "Edit recipe"/"Delete recipe"/"Edit category"/"Delete category" in the browser by the route name, an error message in the browser will appear.
+
+# Testing User Stories from User Experience (UX) Section  
+
+## General Users
+-	As a general user, I want to easily understand the main purpose of the application due to the clear layout.  
+1. The application includes elements and features for the clear purpose understanding:   
+a. navigation bar with the logo and all necessary links for the best navigation  
+b. interactive forms for creating/editing/ deleting recipes  
+c. user’s profile with possibility to be redirected to the recipe creation or veiwing all recipes.  
+d. buttons for the better interaction and executing any needed action.  
+e. search option to easily find any needed recipe.  
+f. a clear and simple layout for managing categories for Admin.  
+g. text content including calls to action, flash messages on executed actions.  
+
+-	As a general c user, I want to be able to intuitively navigate through the application.  
+a.	navigation bar with the logo and all necessary links for the best navigation  
+b.	interactive forms for creating/editing/ deleting recipes  
+c.	user’s profile with possibility to be redirected to the recipe creation or veiwing all recipes.  
+d.	buttons for the better interaction and executing any needed action.  
+e.	search option to easily find any needed recipe.  
+f.	a clear and simple layout for managing categories for Admin.  
+g.	text content including calls to action, flash messages on executed actions.  
+
+-	As a general user, I want the application be responsive on all devices.    
+a. Application is responsive on all kinds of devices  
+
+-	As a general user, I want to be able to use the application on any device.     
+a. It is easy to use the Application on all kinds of devices due to its laconic and clear layout.  
+
+-	As a general user, I want to be able to navigate the application from any kind of devices.         
+a. the mobile version of the application provides a comfortably to use mobile side navigation bar (by Materialize)
+
+## Non logged-in/ Non-registered Users
+-	As a non-logged-in user, who is a food or cook lover, I want to easily understand the main purpose of the applcation, which is providing the possibility to write down favorite recipes with quick notes as well as to manage recipes: create, update, delete.    
+ 
+a. It is easy to understand due to the Home page with the brief project description.
+
+-	As a non-logged-in user, I want to easily understand how i can start using the application. (By SignUp/SignIn function on the home page).      
+
+a. It is easy to understand due to the Home page with the SignUp/SignIn links on the navigation bar.  
+b. After clicking on the SignUp/SignIn an intuitively clear validated form will appear offering to fill in the User name and Password.
+
+-	As a non-registered user, I want to easily sign up in order to start using the application.  
+a. It is easy to accomplish due to the SignUp link on the navigation bar.  
+b. After clicking on the SignUp link an intuitively clear validated form will appear offering to fill in the User name and Password.
+
+
+
+## Logged-in Users
+-	As a logged-in user I want to be redirected to my Profile page where i am greeted as a User and from where I can create new recipes or have a quick access to the all recipes page.   
+a. After signing in/signing up the User is redirected to “My page”.  
+b. Here user can use the “Create recipe” or “View all recipes” buttons to choose the needed action.
+
+-   As a logged-in user, I want to easily find out how i can put quick notes of a new recipe.   
+a. It is easy to do through navbar link “New recipe” or by hitting the button “Create your recipe” on “My page”.  
+
+-	As a logged-in user, I want to easily get any recipe or category by search option.  
+
+a. There is a search option on the “Recipes” page, where user can find posted recipes by key words (recipe name, category name, ingredients).
+
+-	As a logged-in user, I want to easily find out what kind of the recipe information I can write down.   
+a. A validated form will intuitively guide users by its fileds: Category, Recipe Name, Description, Ingredients, Cooking time, loading image input).
+
+-	As a logged-in user, I want to create a recipe record in the easiest way.  
+a. A validated form will intuitively guide users by its fileds: Category, Recipe Name, Description, Ingredients, Cooking time, loading image input).  
+b. The dropdown option for choosing category is provided.  
+
+
+-	As a logged-in user, I want to easily cancel adding the Recipe.   
+a. The button cancel below the Create recipe form is provided.
+
+-	As a logged-in user, I want to upload a recipe image to remember how it looks like a. The form is provided with the input field for the image link.  
+b. As an example for the users’ convenience it is shown how the link should look like.
+ 
+-	As a logged-in user, I want to easily find out how to edit or delete the Recipe.  
+a. Each recipy card with the recipe description is provided with edit/delete button.  
+b. When the action is completed successfulle, the user will be notified with the flash messages.
+
+-	As a logged-in user, I want to easily cancel editing the Recipe.  
+a. While editing, the user can see the “Cancel” button below the “Edit Recipe” form.
+
+-	As a logged-in user, I want to have basic food categories to where i can allocate my recipes.  
+a. The User can choose already set by Admin categories from the drop down menu in the “Create Recipe” form.
+
+-	As a logged-in user, I do not want anyone, except Admin, to manage my recipes.  
+a. Only recipes Authors can manage their recipes. The buttons edit/delete are not displayed for non-authors.
+
+## Admin
+-	As an Admin, I want to easily sign-in to the website.  
+a. It is easy to understand due to the Home page with SignIn link on the navigation bar.  
+b. After clicking on the SignIn an intuitively clear validated form will appear offering to fill in the User name and Password.
+
+-	As an Admin, I want to have access for editing/deleting any created recipe of any user.   
+
+a. Admin has access to manage recipes of any user: the buttons “edit”/”delet” are always displaed for Admin below the recipes cards on the “Recipes” page.
+
+-	As an Admin, I want to to have access to the recipes categories with the possibility to manage them (add, edit, delete).  
+
+a. Admin has access to manage recipes’ categories through the Navigation bar by hitting the “Manage Categories” link.  
+b. The possibility to manage categories is provided by the buttons ”Create category” above all categories and “edit”/”delete” buttons, which are always displaed for Admin.
+
+-	As an Admin, I want the recipes Authors to be able to manage only their own recipes.  
+a. Only recipes Authors can manage their recipes. The buttons edit/delete are not displayed for non-authors.
+
+-	As an Admin I do not want to showcase all the created recipes to non-logged in users.   
+a. The non-logged Users do not have access to view all recipes. After hitting the button “View recipes” on the Home page, they are redirected to the page with a “Sorry” message and are offered to sign-in/sign-up first in the displayed form.
+ 
+-	As an Admin I want to limitate non-logged in users from having access to the:   
+a. vewing/managing all recipes  
+b. having search option     
+c. managing categories  
+d. having access to their or other users profiles  
+
+In all these cases the non-logged in User will be redirected to customized error-handlers pages with the respective messages and further guidance.
+
+
+  
 
 
 
@@ -350,7 +548,8 @@ Materialize Library was used to make a responsive navigation bar, footer and thr
 ## Media  
 
 -   The background image: [Pexels](https://www.pexels.com/photo/table-on-wooden-plank-326279/)
--   The URL for recipes' images were taken from different sources just for demonstration purposes.
+-   The URL for recipes' images were taken from different sources just for demonstration purposes.  
+-   The default image when the users' image cannot be loaded, was created by application developer.
 
 
 
