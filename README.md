@@ -520,7 +520,19 @@ In all these cases the non-logged in User will be redirected to customized error
 - The website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
 - The website was viewed on a variety of devices such as Desktop, Laptop, iPhone 8, Xiaomi Mi Note 10, Xiaomi Note 10 Pro.
 - A large amount of testing was done to ensure that all internal/external links work correctly.
-- Friends and family members were asked to review the website to point out any bugs and/or user experience issues.
+- Friends and family members were asked to review the website to point out any bugs and/or user experience issues.  
+
+## Known bugs
+
+- During testing the application on the different screen sizes there was revelead that on the x-large screen the recipe cards and recipe шьфпуы were of different heights, so it looked messy.  
+ The problem was solved with applying media queries for big screens by setting the card min-height of 700px and the image min height of 500px.  
+- When clicking on links in the collapsible mobile side navigation bar on small devices, the redirection to other pages did not work.  
+The problem was in using the default Materialize "sidenav-overlay"class. To fix the problem the height and width were set to 0.  
+- The form validation for the dropdown menu for categories did not work.
+Fixed by using the JS validation function inside the jquery $(document).ready(function().  
+- Non-logged-in/logged-in users could access categories/edit categories, all recipes/edit recipes pages from the browser as the developer limitated the access only on the fronend side.
+This was fixed by creating the: if not session.get("user") statement.
+
 
 
   
