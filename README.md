@@ -307,8 +307,8 @@ Only some warnings were found.
 
 - Lighthouse
 
-[Home page](static/testing_lighthouse/light_house_home.png)  
-[User's profile page](static/testing_lighthouse/light_house_mypage.png)  
+[Home page](static/testing_lighthouse/light_house_home_new.png)  
+[User's profile page](static/testing_lighthouse/light_house_mypage.PNG)  
 [Sign in page](static/testing_lighthouse/light_house_signin.png)  
 
 
