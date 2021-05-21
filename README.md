@@ -279,7 +279,26 @@ This feature helps users when clicking the red button on the recipe card to easi
 
 A lot of testing was carried out, including Google Chrome developer tools, manual testing on desktops, laptops, mobile devices as well as different browsers (more detailed in the “Further Testing section”). The owner’s friends and family were asked to provide the feedback and test the website, what was considered in order to make the website more attractive visually and easier to navigate (more details in the “Known Bugs” section).
 
-[W3C CSS Validator](static/testing/css_testing.png)
+- CSS 
+[W3C CSS Validator](static/testing/css_testing.png) 
+- Python 
+[pep8 Validator](static/testing/python_testing.png)
+- Java Script  
+[jsHint](static/testing/js_testing.png)  
+There was no major issues found.
+- HTML  
+[Home page](static/testing_html/home.png)
+[Signin page](static/testing_html/signin.png)
+[Sign up page](static/testing_html/signup.png)
+[Sign out page](static/testing_html/signout.png)
+[Recipes page](static/testing_html/recipes.png)
+[Add recipe page](static/testing_html/add_recipe.png)
+[Edit recipe page](static/testing_html/edit_recipe.png)
+[Manage categories page](static/testing_html/manage_categories.png)
+[Create category page](static/testing_html/create_category.png)
+[Edit categories page](static/testing_html/edit_categories.png)
+[User's profile page](static/testing_html/mypage.png)
+[Home page](static/testing_html/home.png)
 
 
 # Manual testing of all elements and funcionality
