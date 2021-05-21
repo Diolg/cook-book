@@ -343,7 +343,7 @@ Only some warnings were found.
 
 - "Create your recipe" from "Mypage"
 1. A validated form appears.
-2. If the user did not fill in an input field a red line will appear, otherwise the green line will shoe that everything is correct.
+2. If the user did not fill in an input field a red line will appear, otherwise the green line will show that everything is correct.
 3. A drop down menu for choosing category appears.
 ![dropdown-category](static/manual_testing/create_recipe_dropdown.png)
 4. User provides a link to load the image in the indicated format.
@@ -532,6 +532,8 @@ The problem was in using the default Materialize "sidenav-overlay"class. To fix 
 Fixed by using the JS validation function inside the jquery $(document).ready(function().  
 - Non-logged-in/logged-in users could access categories/edit categories, all recipes/edit recipes pages from the browser as the developer limitated the access only on the fronend side.
 This was fixed by creating the: if not session.get("user") statement.
+- The initial background image was overloaded with the variety of visual elements. All those (friends/family), who were testing the application, advised to change the image to something more simple, with less elements.
+ 
 
 
 
@@ -614,7 +616,19 @@ Materialize Library was used to make a responsive navigation bar, footer and thr
 
 -   The background image: [Pexels](https://www.pexels.com/photo/table-on-wooden-plank-326279/)
 -   The URL for recipes' images were taken from different sources just for demonstration purposes.  
--   The default image when the users' image cannot be loaded, was created by application developer.
+-   The default image when the users' image cannot be loaded, was created by application developer.  
+
+## README  
+
+- Code Institute README  
+
+## Acknowledgements  
+
+- To my husband and other members of my family as well as friends for helping me in testing the website.
+- To my mentor Medale Oluwafemi for patience and helping me through the process.
+- To tutors (especially, to Igor_CI) and peers from Slack community, for support and prompt reactions during the process.
+
+
 
 
 
