@@ -279,6 +279,9 @@ This feature helps users when clicking the red button on the recipe card to easi
 
 A lot of testing was carried out, including Google Chrome developer tools, manual testing on desktops, laptops, mobile devices as well as different browsers (more detailed in the “Further Testing section”). The owner’s friends and family were asked to provide the feedback and test the website, what was considered in order to make the website more attractive visually and easier to navigate (more details in the “Known Bugs” section).
 
+[W3C CSS Validator](static/testing/css_testing.png)
+
+
 # Manual testing of all elements and funcionality
 
 - Navigation bar
@@ -294,12 +297,15 @@ A lot of testing was carried out, including Google Chrome developer tools, manua
 - Home Page
 1. A non-logged user sees the displayed links "Home", "Sign UP", "Sign In" on the navigation bar, which redirect to respective pages.
 2. The "View recipes" button redirects non-logged user to the error handler page with the "Sorry" message and advice to sign-in/sign-up first.
+![non-authorized](static/manual_testing/not_authorized.png)
 3. The "View recipes" button redirects logged-in user to the "Recipe" page.
 
 - Sign-in/ Sign-up links on the navbar
-1. When hitting them, the user is redirected to a separate page with the fill on form: "username","password"
+1. When hitting them, the user is redirected to a separate page with the fill in form: "username","password"
 2. If when siginin-up the user name already exists, user will get the flash message.
-3. If the user did not fill in an input field a red line will appear
+![existing-login](static/manual_testing/existing_login.png)
+3. If the user did not fill in an input field a red line will appear.
+![sign-in-validation](static/manual_testing/signin_validation.png)
 4. If the user wants to sign-up/sign-in without filling in the form, they will see the reminder to do that in the input fields.
 5. Redirect users to "My Page" with a greeting and buttons "create your recipe"/"view all recipes"
 2. "create your recipe" leads to the form for creating a recipe
@@ -309,6 +315,7 @@ A lot of testing was carried out, including Google Chrome developer tools, manua
 1. A validated form appears.
 2. If the user did not fill in an input field a red line will appear, otherwise the green line will shoe that everything is correct.
 3. A drop down menu for choosing category appears.
+![dropdown-category](static/manual_testing/create_recipe_dropdown.png)
 4. User provides a link to load the image in the indicated format.
 5. If the image cannot be loaded, user will see the default image with the text "Try again". 
 6. Button "create recipe" leads to the "Recipes" page.
@@ -322,13 +329,16 @@ A lot of testing was carried out, including Google Chrome developer tools, manua
 - "Recipes" page
 1. All recipes are displayed.
 2. Logged-in users sees all recipes but sees "delete"/"edit" buttons only on his/her recipes
-3. "delete" buttin deletes the recipe and leaves the user on the same page.
+![all-recipes](static/manual_testing/author_recipe.png)
+3. "delete" button deletes the recipe and leaves the user on the same page.
 4. "edit" button redirects to the "Edit your recipe" form with the populated fields.
 5. After hitting the "edit" button the user is redirected to the "Recipes" page and sees a susscess flash message. 
 
 - Recipes cards with the image on the "Recipes" page
 1. User hitts the red circle button and sees the card reveal opened with the detailed recipe description.
+
 2. To close the reveal user hits the red circle button on the top left.
+![all-recipes](static/manual_testing/card_reveal.png)
 
 - Search option on the "Recipes" page
 1. User enters any word from the name/description/ingredients/category of any recipe displayed and sees the selected results.
@@ -341,19 +351,30 @@ A lot of testing was carried out, including Google Chrome developer tools, manua
 1. Admin is redirected to his/her profile page with the same functionality
 2. Admin sees "Manage Categories" link on the navbar.
 3. When hits the "Manage Categories", Admin is redirected to the separate page with Categories.
+![manage-categories](static/manual_testing/manage_categories.png)
 4. There is "Create new category" button on the top, which redirects to an validated input field with "create new category"/"cancel" buttons.
 5. "cancel" cleans up the input field.
 6. If the field is empty, when hitting the "create new category" button a reminder in the input field will appear as well as the red line.
 7. "create new category" button redirects again to the "Manage categories" page, with the flash success message.
+![manage-categories](static/manual_testing/create_category_success.png)
 8. Categories have "delete"/"edit" buttons.
 9. "Edit" button redirects again to the form with one populated input field.
 10. Admin can cancel editing.
 9. Admin can succsessful delete the category (a success flash message will appear).
+![manage-categories](static/manual_testing/delete_category.png)
 
 - Non-logged-in/logged-in users testing
 1. If a non-logged-in user tries to access the "Recipes"/"New recipe"/"Search"/"My page" pages in the browser by the route name, a custom page with "Sorry" message and registration form will appear.
+![manage-categories](static/manual_testing/not_authorized.png)
 2. If a non-logged-in/logged-in user tries to access the "Manage categories"/"Add category" pages in the browser by the route name, a custom page with "Sorry, you need to be authorized as Admin to access this page" message will appear.
+![manage-categories](static/manual_testing/admin_authorization_message.png)
 3. If a non-logged-in/logged-in user tries to access the "Edit recipe"/"Delete recipe"/"Edit category"/"Delete category" in the browser by the route name, an error message in the browser will appear.
+
+- Sign-out link on the navbar
+1. When signed-out the user sees the flash message "See you soon" and the sign-in/sign-up form.
+![manage-categories](static/manual_testing/sign_out.png)
+
+
 
 # Testing User Stories from User Experience (UX) Section  
 
@@ -388,11 +409,9 @@ a. the mobile version of the application provides a comfortably to use mobile si
 
 ## Non logged-in/ Non-registered Users
 -	As a non-logged-in user, who is a food or cook lover, I want to easily understand the main purpose of the applcation, which is providing the possibility to write down favorite recipes with quick notes as well as to manage recipes: create, update, delete.    
- 
 a. It is easy to understand due to the Home page with the brief project description.
 
 -	As a non-logged-in user, I want to easily understand how i can start using the application. (By SignUp/SignIn function on the home page).      
-
 a. It is easy to understand due to the Home page with the SignUp/SignIn links on the navigation bar.  
 b. After clicking on the SignUp/SignIn an intuitively clear validated form will appear offering to fill in the User name and Password.
 
@@ -411,7 +430,6 @@ b. Here user can use the “Create recipe” or “View all recipes” buttons t
 a. It is easy to do through navbar link “New recipe” or by hitting the button “Create your recipe” on “My page”.  
 
 -	As a logged-in user, I want to easily get any recipe or category by search option.  
-
 a. There is a search option on the “Recipes” page, where user can find posted recipes by key words (recipe name, category name, ingredients).
 
 -	As a logged-in user, I want to easily find out what kind of the recipe information I can write down.   
@@ -447,11 +465,9 @@ a. It is easy to understand due to the Home page with SignIn link on the navigat
 b. After clicking on the SignIn an intuitively clear validated form will appear offering to fill in the User name and Password.
 
 -	As an Admin, I want to have access for editing/deleting any created recipe of any user.   
-
 a. Admin has access to manage recipes of any user: the buttons “edit”/”delet” are always displaed for Admin below the recipes cards on the “Recipes” page.
 
 -	As an Admin, I want to to have access to the recipes categories with the possibility to manage them (add, edit, delete).  
-
 a. Admin has access to manage recipes’ categories through the Navigation bar by hitting the “Manage Categories” link.  
 b. The possibility to manage categories is provided by the buttons ”Create category” above all categories and “edit”/”delete” buttons, which are always displaed for Admin.
 
